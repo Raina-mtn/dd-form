@@ -1,0 +1,7 @@
+<view class="tab-bar">
+    <tab-bar
+      tabs="{{tabs}}"
+      activeKey="{{tabsIndex}}"
+      onChange="handleChangeTabs"
+    />
+</view>
