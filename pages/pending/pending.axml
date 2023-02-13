@@ -1,0 +1,18 @@
+<page-head title="待办">
+  <view>
+    <tabs items="{{items}}" current="{{current}}" onChange="handleChangeTab">
+      <view slot="title" slot-scope="item">
+        <badge
+          type="number"
+          text="{{2}}"
+          position="top-right"
+        >
+          {{item.value.title}}
+        </badge>
+      </view>
+      <view class="content" slot-scope="item">
+        <pending-card title="GZ20230109006" status="" grade="A" reportTime="2023-01-23" isExceed="{{true}}" detail="1234567"/>
+      </view>
+    </tabs>
+  </view>
+</page-head>

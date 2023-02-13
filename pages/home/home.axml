@@ -1,0 +1,9 @@
+<page-head title="首页">
+  <list  radius="{{true}}" class="list">
+    <list-item a:for="{{ itemList }}" a:key="*this" arrow="right" onTap="handleTap" data-url="{{item.url}}" imageSize="large">{{item.name}}
+      <view slot="image">
+        <image src="{{item.image}}" mode="widthFix" style="width:100%"></image>
+      </view>
+    </list-item>
+  </list>
+</page-head>

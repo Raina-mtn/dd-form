@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "dd-form": "/components/dd-form/dd-form",
+    "button": "antd-mini/es/Button/index",
+    "input": "antd-mini/es/Input/index",
+    "form-item":"antd-mini/es/Form/FormItem/index",
+    "icon": "antd-mini/es/Icon/index",
+    "picker": "antd-mini/es/Picker/index",
+    "popover": "antd-mini/es/Popover/index"
+  },
+  "styleIsolation": "apply-shared"
+}

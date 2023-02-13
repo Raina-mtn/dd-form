@@ -4,6 +4,7 @@ App({
     // 第一次打开
     // options.query == {number:1}
     console.info('App onLaunch');
+    console.info("my.SDKVersion:" + my.SDKVersion);
     this.globalData.corpId = options.query.corpId;
   },
   onShow(options) {
@@ -11,7 +12,8 @@ App({
     // options.query == {number:1}
   },
   globalData: {
-    corpId:''
+    corpId:'',
+    ddform:null
   },
   login(data){
     return new Promise(resolve=>{

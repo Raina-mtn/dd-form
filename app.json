@@ -1,8 +1,42 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/pending/pending",
+    "pages/home/home",
+    "pages/my/my",
+    "pages/index/index",
+    "pages/done/done",
+    "pages/form/risk/risk",
+    "pages/pending/handleForm/handle/handle"
   ],
   "window": {
     "defaultTitle": "设施设备维护"
+  },
+  "tabBar": {
+    "textColor": "#404040",
+    "selectedColor": "#108ee9",
+    "backgroundColor": "#F5F5F9",
+    "items": [
+      {
+        "pagePath": "pages/home/home",
+        "icon": "image/home.png",
+        "activeIcon": "image/home_active.png",
+        "name": "首页"
+      },
+      {
+        "pagePath": "pages/pending/pending",
+        "icon": "image/pending.png",
+        "activeIcon": "image/pending_active.png",
+        "name": "待办"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "icon": "image/my.png",
+        "activeIcon": "image/my_active.png",
+        "name": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "tab-bar": "antd-mini/es/TabBar/index"
   }
 }

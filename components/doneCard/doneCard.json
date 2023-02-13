@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tag": "antd-mini/es/Tag/index",
+    "divider": "antd-mini/es/Divider/index"
+  }
+}

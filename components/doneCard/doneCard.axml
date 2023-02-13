@@ -1,0 +1,8 @@
+<view class="pendingCard-wrapper">
+  <text class="pendingCard-title">{{title}}</text>
+  <tag class="pendingCard-tag-left" color="danger">{{status}}</tag>
+  <tag class="{{`pendingCard-tag-right pendingCard-tag-A`}}">A</tag>
+  <view class="pendingCard-detail">{{detail}}</view>
+  <divider />
+  <text class="pendingCard-reportTime">{{reportTime}}</text>
+</view>

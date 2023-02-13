@@ -1,0 +1,44 @@
+.pendingCard-wrapper{
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 5px;
+  padding: 5px;
+}
+.pendingCard-title{
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 5px;
+}
+.pendingCard-tag-right{
+  float: right;
+}
+.pendingCard-reportTime{
+  color: #8e9bbd;
+  font-size: 14px;
+}
+.pendingCard-isExceed{
+  float: right;
+  margin-right:5px ;
+}
+.pendingCard-button{
+  float: right;
+}
+
+
+
+.pendingCard-tag-A{
+  background-color: #ffcdcd;
+  color: #ff636a;
+}
+.pendingCard-tag-B{
+  background-color: #fdbb48;
+  color: #fdbb3a;
+}
+.pendingCard-tag-C{
+  background-color: #ffcdcd;
+  color: #ff636a;
+}
+.pendingCard-tag-D{
+  background-color: #ffcdcd;
+  color: #ff636a;
+}
