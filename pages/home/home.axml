@@ -1,4 +1,4 @@
-<page-head title="首页">
+<view title="首页">
   <list  radius="{{true}}" class="list">
     <list-item a:for="{{ itemList }}" a:key="*this" arrow="right" onTap="handleTap" data-url="{{item.url}}" imageSize="large">{{item.name}}
       <view slot="image">
@@ -6,4 +6,4 @@
       </view>
     </list-item>
   </list>
-</page-head>
+</view>

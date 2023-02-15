@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tabs": "antd-mini/es/Tabs/index",
+    "page-head": "/components/pageHead/pageHead",
+    "pending-card": "/components/pendingCard/pendingCard"
+  }
+}

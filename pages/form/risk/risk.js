@@ -80,14 +80,18 @@ Page({
     columns:[{
       label:'资产编码',
       name:'id',
+      required:true,
       el:'slot'
     },{
       label:'资产名称',
       name:'name',
+      required:true,
+      allowClear:true,
       el:'input'
     },{
       label:'线路',
       name:'line',
+      required:true,
       el:'picker',
       options:[
         { label: '四号线', value: '4' },
@@ -96,6 +100,7 @@ Page({
     },{
       label:'区域',
       name:'area',
+      required:true,
       el:'cascader',
       join:'/',
       options:[
@@ -127,10 +132,13 @@ Page({
     },{
       label:'详细位置',
       name:'textarea',
+      required:true,
+      allowClear:true,
       el:'textarea'
     },{
       label:'故障等级',
       name:'level',
+      required:true,
       el:'picker',
       options:[
         { label: 'A', value: 'A' },
@@ -138,19 +146,20 @@ Page({
         { label: 'C', value: 'C' },
         { label: 'D', value: 'D' }
       ],
-      help:`提示:
-      A类: 影响行车安全、人身安全、设施设备安全，或影响行车效率、客运服务质量程度严重，或造成社会舆论影响、损害地铁形象，或可能造成上述影响的设施设备故障。 要求修复时间：24小时（1天）
-      B类： 影响行车效率、客运服务质量程度一般的设施设备故障。 要求修复时间：24小时（1天）
-      C类： 除a、b、d类以外其他类设施设备故障。 要求修复时间：120小时（5天）
-      D类： 不影响运营安全、生产效率、服务质量和设施设备可靠性，宜通过集中整治方式修复的故障，以及食堂设备，办公设备类故障。 要求修复时间：168小时（7天）
-      `
+    },{
+      label:'',
+      name:'tip',
+      el:'slot',
     },{
       label:'故障现象',
       name:'detail',
+      required:true,
+      allowClear:true,
       el:'textarea'
     },{
       label:'专业调度',
       name:'dispatch',
+      required:true,
       el:'picker',
       options:[
         { label: '通信', value: '0' },
@@ -164,6 +173,7 @@ Page({
     },{
       label:'故障类型',
       name:'type',
+      required:true,
       el:'picker',
       options:[
         { label: '行车安全', value: '0' },
@@ -174,10 +184,13 @@ Page({
     },{
       label:'是否停用',
       name:'stop',
+      required:true,
       el:'switch',
     },{
       label:'上传图片/视频',
       name:'media',
+      required:true,
+      labelWidth:'110px',
       el:'media',
       count:9,
       tip:'最多可上传九张图片/视频'
@@ -187,9 +200,21 @@ Page({
       el:'slot',
     }],
   },
-  onLoad() {},
+  onLoad() {
+    dd.setNavigationBar({
+      title: '故障工单'})
+  },
   submit(){
-    console.log(this.data.formData);
+    dd.showToast({
+      type: 'success',
+      content: '提交成功',
+      duration: 1000,
+      success: () => {
+        my.switchTab({
+          url:"/pages/home/home"
+        })
+      },
+    });
   },
   onFormChange(i,value){
     console.log('i',i);

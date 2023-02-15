@@ -8,10 +8,25 @@ Component({
     grade:'',
     reportTime:'',
     isExceed:false,
-    detail:''
+    detail:'',
+    url:'',
+    type:'pending'
   },
-  didMount() {},
+  didMount() {
+    console.log('detail',this.props.detail);
+  },
   didUpdate() {},
   didUnmount() {},
-  methods: {},
+  methods: {
+    handleTap(e) {
+      my.navigateTo({
+        url:this.props.url
+      })
+    },
+    onDelay(e){
+      my.navigateTo({
+        url:'/pages/pending/handleForm/formDetail/pages/delay/delay'
+      })
+    }
+  },
 });

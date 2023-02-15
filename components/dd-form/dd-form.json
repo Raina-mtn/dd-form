@@ -2,7 +2,6 @@
   "component": true,
   "usingComponents": {
     "dd-item": "/components/dd-item/dd-item",
-    "container": "antd-mini/es/Container/index",
     "form-input": "antd-mini/es/Form/FormInput/index",
     "form-item": "antd-mini/es/Form/FormItem/index"
   }

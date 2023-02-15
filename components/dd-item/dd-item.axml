@@ -21,6 +21,7 @@
   prefix="{{column.prefix}}" 
   suffix="{{column.suffix}}" 
   confirm-type="{{column.confirmType}}" 
+  placeholderClassName="placeholderCustom"
   type="{{column.type}}" 
   ref="handleRef"
   ></form-input>
@@ -109,7 +110,7 @@
     className="{{column.className}}" 
     color="{{column.color}}" 
     defaultChecked="{{column.defaultChecked}}" 
-    disabled="{{column.disabled}}" 
+    disabled="{{column.disabled}}"
     loading="{{column.loading}}" 
     checkedText="{{column.checkedText}}" 
     uncheckedText="{{column.uncheckedText}}" 
@@ -196,6 +197,7 @@
 <!-- media -->
 <form-item
   a:elif="{{column.el==='media'}}"
+  labelWidth="{{column.labelWidth}}"
   className="{{column.className}}"
   position="{{column.position}}"
   label="{{column.label}}"
@@ -212,6 +214,7 @@
     <form-media
       value="{{value}}"
       column="{{column}}"
+      disabled="{{column.disabled}}"
     />
   </form-item>
 
@@ -298,19 +301,29 @@
     count="{{column.count}}" 
     defaultValue="{{column.defaultValue}}" 
     gutter="{{column.gutter}}" 
-    readonly="{{column.readonly}}" 
+    readonly="{{column.disabled}}" 
     ref="handleRef"
   ></form-rate>
 
 <!-- checklist可勾选列表 -->
-  <!-- <form-checklist 
-    a:elif="{{column.el==='checklist'}}"
-    className="{{column.className}}"
-    defaultValue="{{column.defaultValue}}"
-    multiple="{{column.multiple}}"
-    options="{{column.options}}"
-    ref="handleRef"
-  /> -->
+<form-item
+  a:elif="{{column.el==='checklist'}}"
+  className="{{column.className}}"
+  position="{{column.position}}"
+  label="{{column.label}}"
+  status="{{column.status}}"
+  errors="{{column.errors}}"
+  tooltip="{{column.tooltip}}"
+  required="{{column.required}}"
+  requiredMark="{{column.requiredMark}}">
+    <checklist 
+      disabled="{{column.disabled}}" 
+      defaultValue="{{column.defaultValue}}" 
+      multiple="{{column.multiple}}" 
+      options="{{column.options}}" 
+      style="{{column.style}}" 
+    />
+  </form-item>
 
   <form-cascader-picker
   a:elif="{{column.el==='cascader'}}"

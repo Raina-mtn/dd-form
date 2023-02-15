@@ -1,12 +1,17 @@
 {
   "pages": [
-    "pages/pending/pending",
     "pages/home/home",
     "pages/my/my",
+    "pages/pending/pending",
     "pages/index/index",
     "pages/done/done",
     "pages/form/risk/risk",
-    "pages/pending/handleForm/handle/handle"
+    "pages/pending/handleForm/formDetail/formDetail",
+    "pages/pending/handleForm/formDetail/pages/reject/reject",
+    "pages/pending/handleForm/formDetail/pages/handle/handle",
+    "pages/pending/handleForm/formDetail/pages/delay/delay",
+    "pages/draft/draft",
+    "pages/mySubmit/mySubmit"
   ],
   "window": {
     "defaultTitle": "设施设备维护"

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "form-item":"antd-mini/es/Form/FormItem/index",
+    "dd-form": "/components/dd-form/dd-form"
+  }
+}

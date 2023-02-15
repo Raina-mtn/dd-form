@@ -17,6 +17,7 @@ Component({
   props: {
     column:{},
     onFileListChange:()=>{},
+    disabled:false
   },
   
   didMount() {

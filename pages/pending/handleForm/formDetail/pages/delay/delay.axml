@@ -1,0 +1,11 @@
+<view>
+  <dd-form
+    initialValues="{{formData}}"
+    columns="{{columns}}"
+    formData="{{formData}}"
+    >
+  </dd-form>
+  <button  type="primary" onTap="handleTap">
+    申请延期
+  </button>
+</view>

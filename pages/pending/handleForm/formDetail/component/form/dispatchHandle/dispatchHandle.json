@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "dd-form": "/components/dd-form/dd-form"
+  }
+}

@@ -1,17 +1,11 @@
-<container
-  title="{{title}}"
-  className="ddform"
-
-  >
-  <view 
-    a:for="{{columns}}"  
-    a:key="*this"
-  >
-    <slot name="{{item.name}}">
-      <dd-item
-        column="{{item}}"
-        form="{{form}}"
-      />
-    </slot>
-  </view>
-</container>
+<view 
+  a:for="{{columns}}"  
+  a:key="*this"
+>
+  <slot name="{{item.name}}">
+    <dd-item
+      column="{{item}}"
+      form="{{form}}"
+    />
+  </slot>
+</view>

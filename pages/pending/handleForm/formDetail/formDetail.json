@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "dd-collapse":"./component/collapse/collapse",
+    "button": "antd-mini/es/Button/index",
+    "popup": "antd-mini/es/Popup/index",
+    "steps": "antd-mini/es/Steps/index",
+    "form-info":"./component/info/formInfo/formInfo",
+    "dispatch-info":"./component/info/dispatchInfo/dispatchInfo",
+    "group-info":"./component/info/groupInfo/groupInfo",
+    "evaluate-info":"./component/info/evaluateInfo/evaluateInfo",
+    "container": "antd-mini/es/Container/index"
+  }
+}

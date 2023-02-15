@@ -1,0 +1,12 @@
+<view class="collapse">
+  <view class="collapse-header" onTap="toggleExpand">
+    {{ title }}
+    <icon
+      class="collapse-isExpand"
+      type="{{expand?'UpOutline':'DownOutline'}}"
+    />
+  </view>
+  <view a:if="{{ expand }}">
+    <slot />
+  </view>
+</view>

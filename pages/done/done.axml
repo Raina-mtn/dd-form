@@ -1,9 +1,7 @@
-<page-head title="待办">
-  <view>
-    <tabs items="{{items}}" current="{{current}}" onChange="handleChangeTab">
-      <view class="content" slot-scope="item">
-        <pending-card title="GZ20230109006" status="已驳回" grade="A" reportTime="2023-01-23" isExceed="{{true}}" detail="1234567"/>
-      </view>
-    </tabs>
-  </view>
-</page-head>
+<view>
+  <tabs items="{{items}}" current="{{current}}" onChange="handleChangeTab">
+    <view class="content" slot-scope="content" a:for="{{ doneList }}" a:key="*this">
+      <pending-card type="done"  title="{{item.id}}" status="{{item.status}}" grade="{{item.grade}}" reportTime="{{item.reportTime}}" isExceed="{{item.isExceed}}" detail="{{item.detail}}" url="{{`/pages/pending/handleForm/formDetail/formDetail?id=${item.id}&isDone=${true}`}}">
+    </view>
+  </tabs>
+</view>

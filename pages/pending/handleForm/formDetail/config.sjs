@@ -1,0 +1,23 @@
+//故障工单
+export const riskProgress = [
+  {
+  label:'提报',
+  value:'form'
+  },
+  {
+  label:'调度',
+  value:'dispatch'
+  },
+  {
+  label:'班组',
+  value:'group'
+  },
+  {
+  label:'调度确认',
+  value:'confirm'
+  },
+  {
+  label:'评价',
+  value:'evaluate'
+  },
+]

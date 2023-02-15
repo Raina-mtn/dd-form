@@ -1,7 +1,5 @@
 <view>
-  <page-head title="我的">
-    <list  radius="{{true}}">
-      <list-item a:for="{{ itemList }}" a:key="*this" arrow="right" data-url="{{item.url}}" onTap="handleTap" imageSize="large">{{item.name}}</list-item>
-    </list>
-  </page-head>
+  <list  radius="{{true}}">
+    <list-item a:for="{{ itemList }}" a:key="*this" arrow="right" data-url="{{item.url}}" onTap="handleTap" imageSize="large">{{item.name}}</list-item>
+  </list>
 </view>

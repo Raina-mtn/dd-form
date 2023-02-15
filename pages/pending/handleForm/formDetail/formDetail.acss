@@ -1,0 +1,24 @@
+.ant-input-disabled,.ant-textarea-disabled,.ant-picker-disabled{
+  /* color: #000 !important; */
+  opacity: 1;
+}
+.formDetail{
+  /* display:flex;
+  flex-direction:column; */
+}
+.formDetail-content{
+  margin-bottom: 100rpx;
+}
+.formDetail-btns{
+  background-color: #fff;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+}
+.formDetail-btn{
+  height: 40px;
+  flex: auto ;
+  margin:.20px 10px;
+}

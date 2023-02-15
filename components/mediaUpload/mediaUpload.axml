@@ -28,7 +28,7 @@
     </view>
 
     <view 
-      a:if="{{fileList.length < column.count}}" 
+      a:if="{{fileList.length < column.count && !disabled}}" 
       class="mediaUpload-add" 
       onTap="mediaUpload"
     >

@@ -12,6 +12,7 @@ Component({
     onFormChange:()=>{},
   },
   didMount() {
+    console.log('columns',this.props.columns);
     Object.keys(this.props.formData).map(i=>{
       this.data.form.setFieldValue(i,this.props.formData[i])
     })

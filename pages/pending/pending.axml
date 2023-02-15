@@ -1,18 +1,18 @@
-<page-head title="待办">
+<view>
   <view>
     <tabs items="{{items}}" current="{{current}}" onChange="handleChangeTab">
       <view slot="title" slot-scope="item">
         <badge
           type="number"
-          text="{{2}}"
+          text="{{todoCount[item.value.value]}}"
           position="top-right"
         >
           {{item.value.title}}
         </badge>
       </view>
-      <view class="content" slot-scope="item">
-        <pending-card title="GZ20230109006" status="" grade="A" reportTime="2023-01-23" isExceed="{{true}}" detail="1234567"/>
+      <view class="content" slot-scope="content" a:for="{{ pendingList }}" a:key="*this">
+        <pending-card  title="{{item.id}}" status="{{item.status}}" grade="{{item.grade}}" reportTime="{{item.reportTime}}" isExceed="{{item.isExceed}}" detail="{{item.detail}}" url="{{`/pages/pending/handleForm/formDetail/formDetail?id=${item.id}`}}">
       </view>
     </tabs>
   </view>
-</page-head>
+</view>

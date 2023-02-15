@@ -6,7 +6,8 @@
     "form-item":"antd-mini/es/Form/FormItem/index",
     "icon": "antd-mini/es/Icon/index",
     "picker": "antd-mini/es/Picker/index",
-    "popover": "antd-mini/es/Popover/index"
+    "popover": "antd-mini/es/Popover/index",
+    "container": "antd-mini/es/Container/index"
   },
-  "styleIsolation": "apply-shared"
+  "styleIsolation": "shared"
 }

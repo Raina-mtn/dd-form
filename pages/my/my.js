@@ -7,15 +7,19 @@ Page({
       },
       {
         name:'我的草稿',
-        url:'/image/trobleTicket.png'
+        url:'/pages/draft/draft'
       },
       {
         name:'我的提报',
-        url:'/image/trobleTicket.png'
+        url:'/pages/mySubmit/mySubmit'
       }
     ]
   },
+  onLoad(){
+    dd.setNavigationBar({
+      title: '我的'})},
   handleTap(e) {
+    console.log('e.target.dataset.url',e.target.dataset.url);
     my.navigateTo({
       url:e.target.dataset.url
     })
