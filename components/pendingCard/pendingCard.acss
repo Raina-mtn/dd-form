@@ -21,12 +21,13 @@
 }
 .pendingCard-bottom{
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
 }
 .pendingCard-reportTime{
   color: #8e9bbd;
   font-size: 14px;
   margin-right: auto;
+  margin-top: 8px;
 }
 .pendingCard-isExceed{
   margin-right:5px ;

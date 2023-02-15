@@ -22,8 +22,19 @@ Page({
   handlePopupClose(){
     this.setData({closeVisile:false})
   },
-  handleTap(){},
   onChange(v, items, e) {
     console.log('当前选中的值为：', v, items, e);
   },
+  submit(){
+    dd.showToast({
+      type: 'success',
+      content: '提交成功！',
+      duration: 1000,
+      success: () => {
+        my.switchTab({
+          url: '/pages/pending/pending'
+        })
+      }
+    })
+  }
 });

@@ -128,7 +128,7 @@ export const riskDispatch=[{
   label:'要求修复时间',
   name:'finishTime',
   labelWidth:'110px',
-  el:'date',
+  el:'slot',
   format:'YYYY-MM-DD HH:mm:ss',
   precision:'second',
   disabled:true
@@ -170,7 +170,7 @@ export const riskGroup=[{
 },{
   label:'工班完成时间',
   name:'time',
-  el:'date',
+  el:'slot',
   format:'YYYY-MM-DD HH:mm:ss',
   precision:'second',
   disabled:true

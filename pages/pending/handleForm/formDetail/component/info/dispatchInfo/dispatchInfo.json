@@ -4,6 +4,7 @@
     "list": "antd-mini/es/List/index",
     "list-item": "antd-mini/es/List/ListItem/index",
     "form-item":"antd-mini/es/Form/FormItem/index",
+    "date-picker": "antd-mini/es/DatePicker/index",
     "dd-form": "/components/dd-form/dd-form"
   }
 }

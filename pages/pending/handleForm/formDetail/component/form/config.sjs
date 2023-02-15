@@ -131,8 +131,7 @@ export const riskDispatch=[{
 },{
   label:'要求修复时间',
   name:'finishTime',
-  labelWidth:'110px',
-  el:'date',
+  el:'slot',
   format:'YYYY-MM-DD HH:mm:ss',
   precision:'second',
 },]

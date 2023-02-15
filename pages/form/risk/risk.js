@@ -207,14 +207,26 @@ Page({
   submit(){
     dd.showToast({
       type: 'success',
-      content: '提交成功',
+      content: '提交成功！',
       duration: 1000,
       success: () => {
         my.switchTab({
-          url:"/pages/home/home"
+          url: '/pages/home/home'
         })
-      },
-    });
+      }
+    })
+  },
+  temporary(){
+    dd.showToast({
+      type: 'success',
+      content: '暂存成功！',
+      duration: 1000,
+      success: () => {
+        my.switchTab({
+          url: '/pages/home/home'
+        })
+      }
+    })
   },
   onFormChange(i,value){
     console.log('i',i);

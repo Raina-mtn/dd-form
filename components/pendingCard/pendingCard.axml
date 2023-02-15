@@ -7,7 +7,7 @@
   </view>
   <divider />
   <view class="pendingCard-bottom">
-    <text class="pendingCard-reportTime">{{reportTime}}</text>
+    <view class="pendingCard-reportTime">{{reportTime}}</view>
     <text class="pendingCard-isExceed" style="{{color:isExceed?'red':'black'}}" a:if="{{ ['pending,done'].includes(type) }}">{{isExceed?'已超期':''}}</text>
     <button class="pendingCard-button" inline="{{true}}" size="mini" catchTap="onDelay" a:if="{{ type==='pending' }}">申请延期</button>
   </view>

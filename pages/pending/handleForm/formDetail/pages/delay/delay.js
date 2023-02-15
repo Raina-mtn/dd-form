@@ -13,4 +13,16 @@ Page({
     }]
   },
   onLoad() {},
+  submit(){
+    dd.showToast({
+      type: 'success',
+      content: '提交成功！',
+      duration: 1000,
+      success: () => {
+        my.switchTab({
+          url: '/pages/pending/pending'
+        })
+      }
+    })
+  }
 });

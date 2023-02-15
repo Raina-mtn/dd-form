@@ -9,7 +9,7 @@
   <dispatch-handle a:if="{{ nextProgress==='dispatch' }}"/>
   <group-handle a:if="{{ nextProgress==='group' }}"/>
   <evaluate-handle a:if="{{ nextProgress==='evaluate' }}"/>
-  <button  type="primary" onTap="handleTap">
+  <button  type="primary" onTap="submit">
     确定
   </button>
 

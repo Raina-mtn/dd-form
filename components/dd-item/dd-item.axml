@@ -21,7 +21,6 @@
   prefix="{{column.prefix}}" 
   suffix="{{column.suffix}}" 
   confirm-type="{{column.confirmType}}" 
-  placeholderClassName="placeholderCustom"
   type="{{column.type}}" 
   ref="handleRef"
   ></form-input>

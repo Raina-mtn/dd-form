@@ -4,5 +4,15 @@
     columns="{{columns}}"
     formData="{{formData}}"
     >
+    <view slot="time">
+      <form-item label="工班完成时间" labelWidth="110px"  >
+        <date-picker 
+          slot="extra"
+          placeholder="请选择"
+          format="YYYY-MM-DD HH:mm:ss"
+        >
+        </date-picker>
+      </form-item>
+    </view>
   </dd-form>
 </view>

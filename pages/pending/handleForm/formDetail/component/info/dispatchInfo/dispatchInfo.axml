@@ -11,5 +11,15 @@
         </list>
       </form-item>
     </view>
+    <view slot="finishTime">
+      <form-item label="要求修复时间" labelWidth="110px"  >
+        <date-picker 
+          slot="extra"
+          defaultValue="2023-01-06 14:26:12"
+          disabled="{{true}}"
+        >
+        </date-picker>
+      </form-item>
+    </view>
   </dd-form>
 </view>

@@ -5,7 +5,7 @@
     formData="{{formData}}"
     >
   </dd-form>
-  <button  type="primary" onTap="handleTap">
+  <button  type="primary" onTap="submit">
     申请延期
   </button>
 </view>

@@ -2,7 +2,16 @@
   <dd-form
     initialValues="{{formData}}"
     columns="{{columns}}"
-    formData="{{formData}}"
-    >
+    formD
+    <view slot="time">
+      <form-item label="工班完成时间" labelWidth="110px"  >
+        <date-picker 
+          slot="extra"
+          defaultValue="2023-01-06 14:26:12"
+          disabled="{{true}}"
+        >
+        </date-picker>
+      </form-item>
+    </view>
   </dd-form>
 </view>
