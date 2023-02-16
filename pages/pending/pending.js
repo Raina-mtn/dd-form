@@ -44,5 +44,12 @@ Page({
   },
   handleChangeTab(current) {
     this.setData({ current });
+    if(this.data.current!==0){
+      this.setData({'pendingList':[]})
+    }else{
+      getListMock().then((res)=>{
+        this.setData({'pendingList':res.data})
+      })
+    }
   },
 });

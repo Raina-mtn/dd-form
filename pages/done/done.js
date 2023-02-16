@@ -27,5 +27,12 @@ Page({
   },
   handleChangeTab(current) {
     this.setData({ current });
+    if(current!==0){
+      this.setData({'doneList':[]})
+    }else{
+      getListMock().then((res)=>{
+        this.setData({'doneList':res.data})
+      })
+    }
   },
 });

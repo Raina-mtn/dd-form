@@ -38,4 +38,16 @@ Page({
   handlePopupClose(){
     this.setData({popupVisible:false})
   },
+  onConfirm(){
+    dd.showToast({
+      type: 'success',
+      content: '确认成功！',
+      duration: 1000,
+      success: () => {
+        my.switchTab({
+          url: '/pages/pending/pending'
+        })
+      }
+    })
+  },
 });

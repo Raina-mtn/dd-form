@@ -1,7 +1,8 @@
 <view>
   <tabs items="{{items}}" current="{{current}}" onChange="handleChangeTab">
-    <view class="content" slot-scope="content" a:for="{{ doneList }}" a:key="*this">
-      <pending-card type="done"  title="{{item.id}}" status="{{item.status}}" grade="{{item.grade}}" reportTime="{{item.reportTime}}" isExceed="{{item.isExceed}}" detail="{{item.detail}}" url="{{`/pages/pending/handleForm/formDetail/formDetail?id=${item.id}&isDone=${true}`}}">
+    <view class="content" slot-scope="content" >
+      <empty a:if="{{ doneList.length===0 }}" title="这里什么也没有" message="看看其它吧" />
+      <pending-card a:for="{{ doneList }}" a:key="*this" type="done"  title="{{item.id}}" status="{{item.status}}" grade="{{item.grade}}" reportTime="{{item.reportTime}}" isExceed="{{item.isExceed}}" detail="{{item.detail}}" url="{{`/pages/pending/handleForm/formDetail/formDetail?id=${item.id}&isDone=${true}`}}">
     </view>
   </tabs>
 </view>

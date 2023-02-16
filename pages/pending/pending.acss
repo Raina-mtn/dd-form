@@ -1,7 +1,3 @@
 .tabItem{
   margin: 0 10px;
 }
-page{
-  height:100%;
-  background-color:#fff;
-}

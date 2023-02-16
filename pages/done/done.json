@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "tabs": "antd-mini/es/Tabs/index",
+    "empty": "antd-mini/es/Empty/index",
     "page-head": "/components/pageHead/pageHead",
     "pending-card": "/components/pendingCard/pendingCard"
   }

@@ -25,7 +25,7 @@ Component({
     // },
     onFileListChange(name,fileList){
       console.log('item name',name);
-      // this.props.onChange(name,fileList)
+      this.props.onChange(name,fileList)
     },
     cascaderFormat(value, column) {
       return column && column.map(i=>i.label).join(this.props.column.join)

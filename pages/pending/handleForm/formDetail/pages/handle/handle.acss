@@ -1,6 +1,3 @@
 .handle-title .ant-container-header-title {
   margin: 0 auto;
-}page{
-  height:100%;
-  background-color:#fff;
 }

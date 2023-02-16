@@ -4,13 +4,6 @@
     columns="{{columns}}"
     formData="{{formData}}"
     >
-    <view slot="group">
-      <form-item label="处理班组" >
-        <list>
-          <list-item brief="小张13401201251">供电班组1</list-item>
-        </list>
-      </form-item>
-    </view>
     <view slot="finishTime">
       <form-item label="要求修复时间" labelWidth="110px"  >
         <date-picker 

@@ -20,14 +20,17 @@
     <!-- <button type="primary" @click="claim">
       同意接单
     </button> -->
-    <button class="formDetail-btn" type="default" onTap="rejectTap">
+    <button a:if="{{ nextProgress !== 'evaluate' }}" class="formDetail-btn" type="default" onTap="rejectTap">
       驳回
     </button>
-    <button a:if="{{ nextProgress === 'confirm' }}" class="formDetail-btn" type="primary" @click="submitNext">
+    <button a:if="{{ nextProgress === 'confirm' }}" class="formDetail-btn" type="primary" onTap="onConfirm">
       确认关单
     </button>
-    <button a:if="{{ nextProgress !== 'confirm' }}" class="formDetail-btn"  type="primary" onTap="handleTap">
+    <button a:if="{{ ['form','dispatch','group'].includes(nextProgress) }}" class="formDetail-btn"  type="primary" onTap="handleTap">
       处理
+    </button>
+    <button a:if="{{ nextProgress === 'evaluate' }}" class="formDetail-btn"  type="primary" onTap="handleTap">
+      评价
     </button>
   </view>
 

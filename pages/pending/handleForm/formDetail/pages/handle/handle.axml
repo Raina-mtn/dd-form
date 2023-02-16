@@ -1,6 +1,6 @@
-<container title="工单处理" className="handle-title">
-  <view slot="headerRight">
-    <button type="text" onTap="handlePopupOpen" a:if="{{ nextProgress==='dispatch' }}">
+<view>
+  <view a:if="{{ nextProgress==='dispatch' }}" style="height:40px;">
+    <button type="text" onTap="handlePopupOpen" style="float:right;">
       转派
     </button>
   </view>
@@ -23,4 +23,4 @@
     </view>
     <icon  style="position:absolute;right:12px;top:12px;" type="CloseOutline" onTap="handlePopupClose" />
   </popup>
-</container>
+</view>

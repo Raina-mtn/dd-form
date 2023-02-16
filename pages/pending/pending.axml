@@ -10,8 +10,9 @@
           {{item.value.title}}
         </badge>
       </view>
-      <view class="content" slot-scope="content" a:for="{{ pendingList }}" a:key="*this">
-        <pending-card  title="{{item.id}}" status="{{item.status}}" grade="{{item.grade}}" reportTime="{{item.reportTime}}" isExceed="{{item.isExceed}}" detail="{{item.detail}}" url="{{`/pages/pending/handleForm/formDetail/formDetail?id=${item.id}`}}">
+      <view class="content" slot-scope="content">
+        <empty a:if="{{ pendingList.length===0 }}" title="这里什么也没有" message="看看其它吧" />
+        <pending-card a:for="{{ pendingList }}" a:key="*this"  title="{{item.id}}" status="{{item.status}}" grade="{{item.grade}}" reportTime="{{item.reportTime}}" isExceed="{{item.isExceed}}" detail="{{item.detail}}" url="{{`/pages/pending/handleForm/formDetail/formDetail?id=${item.id}`}}">
       </view>
     </tabs>
   </view>

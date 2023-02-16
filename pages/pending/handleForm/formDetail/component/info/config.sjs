@@ -123,7 +123,22 @@ export const riskForm=[{
 export const riskDispatch=[{
   label:'处理班组',
   name:'group',
-  el:'slot'
+  el:'picker',
+  options:[
+    { label: '供电班组1', value: '0' },
+    { label: '供电班组2', value: '1' },
+  ],
+  disabled:true
+},{
+  label:'负责人',
+  name:'groupName',
+  el:'input',
+  disabled:true
+},{
+  label:'联系方式',
+  name:'groupTel',
+  el:'input',
+  disabled:true
 },{
   label:'要求修复时间',
   name:'finishTime',
