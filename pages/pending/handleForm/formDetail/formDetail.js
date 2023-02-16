@@ -14,9 +14,7 @@ Page({
   onLoad(options){
     dd.getSystemInfo({
       success: ({model}) => {
-        console.log('model',model);
-        console.log('model.indexOf',model.indexOf('iphone'));
-        this.setData({model})
+        this.setData({'model':model.toLowerCase()})
       }
     })
     this.setData({'isDone':options.isDone})
