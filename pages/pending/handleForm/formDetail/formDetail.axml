@@ -16,7 +16,7 @@
       <evaluate-info formData="{{form.evaluate}}"/>
     </dd-collapse>
   </view>
-  <view class="formDetail-btns" a:if="{{ !isDone }}">
+  <view class="formDetail-btns" a:if="{{ !isDone }}" style="{{model.indexOf('iphone')!== -1 ? 'padding-bottom:20px;':''}}">
     <!-- <button type="primary" @click="claim">
       同意接单
     </button> -->

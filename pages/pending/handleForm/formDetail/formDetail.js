@@ -9,8 +9,16 @@ Page({
     step:[],
     form:[],
     isDone:false,
+    model:''
   },
   onLoad(options){
+    dd.getSystemInfo({
+      success: ({model}) => {
+        console.log('model',model);
+        console.log('model.indexOf',model.indexOf('iphone'));
+        this.setData({model})
+      }
+    })
     this.setData({'isDone':options.isDone})
     geFormMock({id:options.id}).then((res)=>{
       this.setData({'form':res.data})
