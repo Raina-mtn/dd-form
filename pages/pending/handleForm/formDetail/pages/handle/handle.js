@@ -3,13 +3,13 @@ Page({
     closeVisile:false,
     value:'',
     groupOptions:[
-      { label: '通信', value: '0' },
-      { label: '信号', value: '1' },
-      { label: 'OCC', value: '2' },
-      { label: '供电', value: '3' },
-      { label: '土建', value: '4' },
-      { label: '车辆', value: '5' },
-      { label: '施工', value: '6' },
+      { text: '通信', key: '0' },
+      { text: '信号', key: '1' },
+      { text: 'OCC', key: '2' },
+      { text: '供电', key: '3' },
+      { text: '土建', key: '4' },
+      { text: '车辆', key: '5' },
+      { text: '施工', key: '6' },
     ],
     nextProgress:''
   },
@@ -21,6 +21,18 @@ Page({
   },
   handlePopupClose(){
     this.setData({closeVisile:false})
+  },
+  handleAction(){
+    dd.showToast({
+      type: 'success',
+      content: '转派成功！',
+      duration: 1000,
+      success: () => {
+        my.switchTab({
+          url: '/pages/pending/pending'
+        })
+      }
+    })
   },
   onChange(v, items, e) {
     console.log('当前选中的值为：', v, items, e);

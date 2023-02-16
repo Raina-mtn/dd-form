@@ -12,12 +12,8 @@ Page({
     model:''
   },
   onLoad(options){
-    dd.getSystemInfo({
-      success: ({model}) => {
-        this.setData({'model':model.toLowerCase()})
-      }
-    })
     this.setData({'isDone':options.isDone})
+    this.setData({'model':getApp().globalData.model})
     geFormMock({id:options.id}).then((res)=>{
       this.setData({'form':res.data})
     })

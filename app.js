@@ -6,6 +6,11 @@ App({
     console.info('App onLaunch');
     console.info("my.SDKVersion:" + my.SDKVersion);
     this.globalData.corpId = options.query.corpId;
+    dd.getSystemInfo({
+      success: ({model}) => {
+        this.globalData.model =model.toLowerCase()
+      }
+    })
   },
   onShow(options) {
     // 从后台被 scheme 重新打开
@@ -13,7 +18,7 @@ App({
   },
   globalData: {
     corpId:'',
-    ddform:null
+    model:''
   },
   login(data){
     return new Promise(resolve=>{

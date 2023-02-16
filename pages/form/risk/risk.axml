@@ -20,8 +20,8 @@
       D类： 不影响运营安全、生产效率、服务质量和设施设备可靠性，宜通过集中整治方式修复的故障，以及食堂设备，办公设备类故障。 要求修复时间：168小时（7天）
      </view>
     </view>
-    <view slot="btns" style="display:flex;flex-direction:row;">
-      <button  style="margin-right: 12px;width:50px;" onTap="temporary">暂存</button>
-      <button type="primary" onTap="submit" style="flex-grow:1;">提交</button>
+    <view slot="btns" class="risk-btns">
+      <button class="risk-temporary" onTap="temporary">暂存</button>
+      <button class="risk-submit" type="primary" onTap="submit">提交</button>
   </dd-form>
 </view>

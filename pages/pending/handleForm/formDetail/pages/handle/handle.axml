@@ -13,14 +13,13 @@
     确定
   </button>
 
-  <popup 
-    visible="{{closeVisile}}" 
-    height="{{250}}"  
-    position="bottom" 
-    animation="{{true}}" 
-    onClose="handlePopupClose">
-    <view style="padding:12px">
-    </view>
-    <icon  style="position:absolute;right:12px;top:12px;" type="CloseOutline" onTap="handlePopupClose" />
-  </popup>
+
+  <action-sheet
+    title="请选择转派调度"
+    visible="{{closeVisile}}"
+    actions="{{groupOptions}}"
+    data-index="1"
+    onClose="handlePopupClose"
+    onAction="handleAction"
+  />
 </view>
