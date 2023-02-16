@@ -1,0 +1,41 @@
+<dd-form
+  columns="{{columns}}"
+  initialValues="{{initialValues}}"
+  onSuccess="onSuccess"
+  ref="handleFormJSONRef"
+>
+  <view slot="fruit" slot-scope="item">
+    <form-input
+      label="{{item.value.label}}"
+      name="{{item.value.name}}"
+      required="{{item.value.required}}"
+      placeholder="{{item.value.placeholder}}"
+      message="{{item.value.message}}"
+      ref="handleRef"
+    />
+  </view>
+  <view slot="choose" slot-scope="item">
+    <form-switch
+      label="{{item.value.label}}"
+      name="{{item.value.name}}"
+      message="{{item.value.message}}"
+      ref="handleRef"
+    />
+  </view>
+  <view slot="date" slot-scope="item">
+    <form-date-picker
+      label="出生日期"
+      arrow
+      name="birthday"
+      ref="handleRef"
+    />
+  </view>
+  <view slot="btns" slot-scope="item">
+    <button
+      type="primary"
+      onTap="onSuccess"
+    >
+      提交
+    </button>
+  </view>
+</form-json>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "dd-form": "/components/dd-form/dd-form",
+    "form-input": "antd-mini/es/Form/FormInput/index",
+    "form-date-picker": "antd-mini/es/Form/FormDatePicker/index",
+    "form-switch": "antd-mini/es/Form/FormSwitch/index"
+  }
+}

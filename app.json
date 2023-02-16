@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/FormJSON/index",
     "pages/pending/pending",
     "pages/home/home",
     "pages/my/my",
@@ -33,6 +34,12 @@
         "icon": "image/my.png",
         "activeIcon": "image/my_active.png",
         "name": "我的"
+      },
+      {
+        "pagePath": "pages/FormJSON/index",
+        "icon": "image/my.png",
+        "activeIcon": "image/my_active.png",
+        "name": "ddform"
       }
     ]
   },

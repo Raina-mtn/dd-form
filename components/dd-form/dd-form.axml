@@ -1,17 +1,367 @@
-<container
-  title="{{title}}"
-  className="ddform"
+<block a:for="{{columns}}">
+  <form-input
+  a:if="{{item.el==='input'}}"
+  name="{{item.name}}" 
+  label="{{item.label}}" 
+  position="{{item.position}}" 
+  validateStatus="{{item.validateStatus}}" 
+  help="{{item.help}}" 
+  tooltip="{{item.tooltip}}" 
+  required="{{item.required}}" 
+  message="{{item.message}}" 
+  requiredMark="{{item.requiredMark}}" 
+  defaultValue="{{item.defaultValue}}" 
+  disabled="{{item.disabled}}" 
+  maxLength="{{item.maxLength}}" 
+  placeholder="{{item.placeholder||`请输入${item.label}`}}" 
+  style="{{item.style}}" 
+  allowClear="{{item.allowClear}}" 
+  focus="{{item.focus}}" 
+  password="{{item.password}}" 
+  prefix="{{item.prefix}}" 
+  suffix="{{item.suffix}}" 
+  confirm-type="{{item.confirmType}}" 
+  type="{{item.type}}" 
+  ref="handleRef"
+  ></form-input>
 
+<!-- textarea输入框 -->
+<form-textarea
+  a:elif="{{item.el==='textarea'}}"
+  name="{{item.name}}" 
+  label="{{item.label}}" 
+  position="{{item.position}}" 
+  validateStatus="{{item.validateStatus}}" 
+  help="{{item.help}}" 
+  tooltip="{{item.tooltip}}" 
+  required="{{item.required}}" 
+  message="{{item.message}}" 
+  requiredMark="{{item.requiredMark}}" 
+  defaultValue="{{item.defaultValue}}" 
+  disabled="{{item.disabled}}" 
+  maxLength="{{item.maxLength}}" 
+  placeholder="{{item.placeholder||`请输入${item.label}`}}" 
+  style="{{item.style}}" 
+  autoHeight="{{item.autoHeight}}" 
+  enableNative="{{item.enableNative}}" 
+  showCount="{{item.showCount}}" 
+  confirm-type="{{item.confirmType}}" 
+  type="{{item.type}}" 
+  ref="handleRef"
+  ></form-textarea>
+
+<!-- selector选择 -->
+<form-selector 
+  a:elif="{{item.el==='select'}}"
+  options="{{item.options}}" 
+  name="{{item.name}}" 
+  label="{{item.label}}" 
+  position="{{item.position}}" 
+  validateStatus="{{item.validateStatus}}" 
+  help="{{item.help}}" 
+  tooltip="{{item.tooltip}}" 
+  required="{{item.required}}" 
+  message="{{item.message}}" 
+  requiredMark="{{item.requiredMark}}" 
+  defaultValue="{{item.defaultValue}}" 
+  disabled="{{item.disabled}}" 
+  maxSelectedCount="{{item.maxSelectedCount}}" 
+  minSelectedCount="{{item.minSelectedCount}}" 
+  multiple="{{item.multiple}}" 
+  style="{{item.style}}" 
+  ref="handleRef"
+  ></form-selector>
+
+  <!-- radio单选框 -->
+  <form-radio-group
+    a:elif="{{item.el==='radio'}}"
+    name="{{item.name}}" 
+    label="{{item.label}}" 
+    position="{{item.position}}" 
+    validateStatus="{{item.validateStatus}}" 
+    help="{{item.help}}" 
+    tooltip="{{item.tooltip}}" 
+    required="{{item.required}}" 
+    message="{{item.message}}" 
+    requiredMark="{{item.requiredMark}}" 
+    className="{{item.className}}" 
+    color="{{item.color}}" 
+    disabled="{{item.disabled}}" 
+    defaultValue="{{item.defaultValue}}" 
+    style="{{item.style}}" 
+    options="{{item.options}}" 
+    ref="handleRef"
+  ></form-radio-group>
+
+  <!-- switch开关 -->
+  <form-switch 
+    a:elif="{{item.el==='switch'}}"
+    name="{{item.name}}" 
+    label="{{item.label}}" 
+    position="{{item.position}}" 
+    validateStatus="{{item.validateStatus}}" 
+    help="{{item.help}}" 
+    tooltip="{{item.tooltip}}" 
+    required="{{item.required}}" 
+    message="{{item.message}}" 
+    requiredMark="{{item.requiredMark}}" 
+    checked="{{item.checked}}" 
+    className="{{item.className}}" 
+    color="{{item.color}}" 
+    defaultChecked="{{item.defaultChecked}}" 
+    disabled="{{item.disabled}}" 
+    loading="{{item.loading}}" 
+    checkedText="{{item.checkedText}}" 
+    uncheckedText="{{item.uncheckedText}}" 
+    size="{{item.size}}" 
+    style="{{item.style}}" 
+    ref="handleRef"
+  ></form-switch>
+
+<!-- date-picker时间选择器 -->
+<form-date-picker 
+  a:elif="{{item.el==='date'}}"
+  name="{{item.name}}" 
+  label="{{item.label}}" 
+  position="{{item.position}}" 
+  validateStatus="{{item.validateStatus}}" 
+  help="{{item.help}}" 
+  tooltip="{{item.tooltip}}" 
+  required="{{item.required}}" 
+  message="{{item.message}}" 
+  requiredMark="{{item.requiredMark}}" 
+  className="{{item.className}}" 
+  defaultValue="{{item.defaultValue}}" 
+  disabled="{{item.disabled}}" 
+  cancelText="{{item.cancelText}}" 
+  format="{{item.format}}" 
+  indicatorStyle="{{item.indicatorStyle}}" 
+  indicatorClassName="{{item.indicatorClassName}}" 
+  maskClassName="{{item.maskClassName}}" 
+  maskClosable="{{item.maskClosable}}" 
+  maskStyle="{{item.maskStyle}}" 
+  max="{{item.max}}" 
+  min="{{item.min}}" 
+  okText="{{item.okText}}" 
+  placeholder="{{item.placeholder||'请选择时间'}}" 
+  popClassName="{{item.popClassName}}" 
+  popStyle="{{item.popStyle}}" 
+  precision="{{item.precision}}" 
+  prefix="{{item.prefix}}" 
+  style="{{item.style}}" 
+  suffix="{{item.suffix}}" 
+  title="{{item.title}}" 
+  ref="handleRef"
+  ></form-date-picker>
+
+<!--range-picker   -->
+<form-range-picker
+  a:elif="{{item.el==='daterange'}}"
+  name="{{item.name}}" 
+  label="{{item.label}}" 
+  position="{{item.position}}" 
+  validateStatus="{{item.validateStatus}}" 
+  help="{{item.help}}" 
+  tooltip="{{item.tooltip}}" 
+  required="{{item.required}}" 
+  message="{{item.message}}" 
+  requiredMark="{{item.requiredMark}}" 
+  className="{{item.className}}" 
+  defaultValue="{{item.defaultValue}}" 
+  disabled="{{item.disabled}}" 
+  cancelText="{{item.cancelText}}" 
+  format="{{item.format}}" 
+  indicatorStyle="{{item.indicatorStyle}}" 
+  indicatorClassName="{{item.indicatorClassName}}" 
+  maskClassName="{{item.maskClassName}}" 
+  maskClosable="{{item.maskClosable}}" 
+  maskStyle="{{item.maskStyle}}" 
+  max="{{item.max}}" 
+  min="{{item.min}}" 
+  okText="{{item.okText}}" 
+  endPlaceholder="{{item.endPlaceholder}}" 
+  placeholder="{{item.placeholder||'请选择时间'}}" 
+  popClassName="{{item.popClassName}}" 
+  popStyle="{{item.popStyle}}" 
+  precision="{{item.precision}}" 
+  splitCharacter="{{item.splitCharacter}}" 
+  startPlaceholder="{{item.startPlaceholder}}" 
+  prefix="{{item.prefix}}" 
+  style="{{item.style}}" 
+  suffix="{{item.suffix}}" 
+  title="{{item.title}}" 
+  ref="handleRef"
+  ></form-range-picker>
+
+<!-- media -->
+<form-item
+  a:elif="{{item.el==='media'}}"
+  className="{{item.className}}"
+  position="{{item.position}}"
+  label="{{item.label}}"
+  status="{{item.status}}"
+  errors="{{item.errors}}"
+  tooltip="{{item.tooltip}}"
+  required="{{item.required}}"
+  requiredMark="{{item.requiredMark}}"
+  validateStatus="{{item.validateStatus}}"
+  help="{{help}}"
+  onFileListChange="onFileListChange"
+  onTap="onFileListChange"
   >
-  <view 
-    a:for="{{columns}}"  
-    a:key="*this"
-  >
-    <slot name="{{item.name}}">
-      <dd-item
-        column="{{item}}"
-        form="{{form}}"
-      />
-    </slot>
-  </view>
-</container>
+    <form-media
+      value="{{value}}"
+      item="{{item}}"
+    />
+  </form-item>
+
+<!-- stepper计数器 -->
+<form-stepper 
+  a:elif="{{item.el==='stepper'}}"
+  name="{{item.name}}" 
+  label="{{item.label}}" 
+  position="{{item.position}}" 
+  validateStatus="{{item.validateStatus}}" 
+  help="{{item.help}}" 
+  tooltip="{{item.tooltip}}" 
+  required="{{item.required}}" 
+  message="{{item.message}}" 
+  requiredMark="{{item.requiredMark}}" 
+  className="{{item.className}}"
+  disabled="{{item.disabled}}"
+  defaultValue="{{item.defaultValue}}"
+  focus="{{item.focus}}"
+  inputClassName="{{item.inputClassName}}"
+  inputStyle="{{item.inputStyle}}"
+  min="{{item.min}}"
+  max="{{item.max}}"
+  precision="{{item.precision}}"
+  style="{{item.style}}"
+  step="{{item.step}}"
+  type="{{item.type}}"
+  ref="handleRef"
+  ></form-stepper>
+
+  <!-- picker选择器 -->
+  <form-picker 
+    a:elif="{{item.el==='picker'}}"
+    name="{{item.name}}" 
+    label="{{item.label}}" 
+    position="{{item.position}}" 
+    validateStatus="{{item.validateStatus}}" 
+    help="{{item.help}}" 
+    tooltip="{{item.tooltip}}" 
+    required="{{item.required}}" 
+    message="{{item.message}}" 
+    requiredMark="{{item.requiredMark}}" 
+    className="{{item.className}}" 
+    defaultValue="{{item.defaultValue}}" 
+    disabled="{{item.disabled}}" 
+    cancelText="{{item.cancelText}}" 
+    content="{{item.content}}" 
+    indicatorStyle="{{item.indicatorStyle}}" 
+    indicatorClassName="{{item.indicatorClassName}}" 
+    maskClassName="{{item.maskClassName}}" 
+    maskClosable="{{item.maskClosable}}" 
+    maskStyle="{{item.maskStyle}}" 
+    okText="{{item.okText}}" 
+    options="{{item.options}}" 
+    placeholder="{{item.placeholder||`请选择${item.label}`}}" 
+    popClassName="{{item.popClassName}}" 
+    popStyle="{{item.popStyle}}" 
+    prefix="{{item.prefix}}" 
+    style="{{item.style}}" 
+    suffix="{{item.suffix}}" 
+    title="{{item.title}}" 
+    ref="handleRef"
+  ></form-picker>
+
+  
+  <!-- rate-->
+  <form-rate
+    a:elif="{{item.el==='rate'}}"
+    name="{{item.name}}" 
+    label="{{item.label}}" 
+    position="{{item.position}}" 
+    validateStatus="{{item.validateStatus}}" 
+    help="{{item.help}}" 
+    tooltip="{{item.tooltip}}" 
+    required="{{item.required}}" 
+    message="{{item.message}}" 
+    requiredMark="{{item.requiredMark}}" 
+    allowHalf="{{item.allowHalf}}" 
+    allowClear="{{item.allowClear}}" 
+    className="{{item.className}}" 
+    character="{{item.character}}" 
+    characterActiveClassName="{{item.characterActiveClassName}}" 
+    characterClassName="{{item.characterClassName}}" 
+    count="{{item.count}}" 
+    defaultValue="{{item.defaultValue}}" 
+    gutter="{{item.gutter}}" 
+    readonly="{{item.readonly}}" 
+    ref="handleRef"
+  ></form-rate>
+
+<!-- checklist可勾选列表 -->
+  <!-- <form-checklist 
+    a:elif="{{item.el==='checklist'}}"
+    className="{{item.className}}"
+    defaultValue="{{item.defaultValue}}"
+    multiple="{{item.multiple}}"
+    options="{{item.options}}"
+    ref="handleRef"
+  /> -->
+
+  <form-cascader-picker
+  a:elif="{{item.el==='cascader'}}"
+  name="{{item.name}}" 
+  label="{{item.label}}" 
+  position="{{item.position}}" 
+  validateStatus="{{item.validateStatus}}" 
+  help="{{item.help}}" 
+  tooltip="{{item.tooltip}}" 
+  required="{{item.required}}" 
+  message="{{item.message}}" 
+  requiredMark="{{item.requiredMark}}"
+  options="{{item.options}}"
+  placeholder="{{item.placeholder||`请选择${item.label}`}}"
+  defaultValue="{{item.defaultValue}}"
+  disabled="{{item.disabled}}"
+  cancelText="{{item.cancelText}}"content="{{item.content}}" 
+  indicatorStyle="{{item.indicatorStyle}}" 
+  indicatorClassName="{{item.indicatorClassName}}" 
+  maskClassName="{{item.maskClassName}}" 
+  maskClosable="{{item.maskClosable}}" 
+  maskStyle="{{item.maskStyle}}" 
+  okText="{{item.okText}}" 
+  popClassName="{{item.popClassName}}" 
+  popStyle="{{item.popStyle}}" 
+  prefix="{{item.prefix}}" 
+  style="{{item.style}}" 
+  suffix="{{item.suffix}}" 
+  title="{{item.title}}" 
+  onFormat="cascaderFormat"
+  ref="handleRef"
+></form-cascader-picker>
+
+  <slot a:else name="{{item.name}}" value="{{item}}" />
+</block>
+
+
+<!-- <button
+  type="{{config.submit.type}}"
+  style="{{config.submit.style}}"
+  onTap="submit"
+>
+  {{config.submit.text}}
+</button>
+
+<button
+  type="{{config.reset.type}}"
+  style="{{config.reset.style}}"
+  onTap="reset"
+>
+  {{config.reset.text}}
+</button> -->
+
+

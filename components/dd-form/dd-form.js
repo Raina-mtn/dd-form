@@ -2,39 +2,20 @@ import { Form } from 'antd-mini/es/Form/form';
 
 Component({
   mixins: [],
-  data: {
-    form: new Form(),
+  onInit() {
+    this.form = new Form();
+    console.log('this.props',this.props);
+    this.form.setInitialValues(this.props.initialValues);//初始值
+    this.form.reset();//重置表单为初始值
   },
-  props: {
-    title:'',
-    columns:[],
-    formData:{},
-    onFormChange:()=>{},
+  handleRef(ref) {
+    this.form.addItem(ref);
   },
-  didMount() {
-    Object.keys(this.props.formData).map(i=>{
-      this.data.form.setFieldValue(i,this.props.formData[i])
-    })
-    this.props.columns.map(i=>{
-      this.data.form.onValueChange(i.name,(value)=>{
-        this.props.onFormChange(i.name,value)
-      })
-    })
+  async submit() {
+    const values = await this.form.submit();
+    this.props.onSuccess(values);
   },
-  didUpdate() {
-    Object.keys(this.props.formData).map(i=>{
-      this.data.form.setFieldValue(i,this.props.formData[i])
-    })
-    this.props.columns.map(i=>{
-      this.data.form.onValueChange(i.name,(value)=>{
-        this.props.onFormChange(i.name,value)
-      })
-    })
+  reset() {
+    this.form.reset();
   },
-  didUnmount() {},
-  onChange(name,value){
-    console.log('form name',name);
-    
-    this.props.onFormChange(name,value)
-  }
 });
