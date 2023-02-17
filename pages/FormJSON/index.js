@@ -59,28 +59,7 @@ Page({
     this.formItems.push(ref);
   },
   async onSuccess() {
-    // const values = await this.ref.form.submit();
-    // console.log('values',values);
-    await dd.chooseDingTalkDir({
-      success: (res) => {
-          console.log('res',res);
-      },
-      fail: (err) =>{
-          dd.alert({
-              content:JSON.stringify(err)
-          })
-      }
-  })
-    
-    dd.uploadAttachmentToDingTalk({
-      file: {spaceId:"21033695351",max:1},
-      types:["file"],//PC端仅支持["photo","file","space"]
-      success: (res) => {
-        console.log('res',res);
-      },
-      fail: (err) =>{
-        console.log('err',err);
-      }
-  })
+    const values = await this.ref.form.submit();
+    console.log('values',values);
   },
 });
