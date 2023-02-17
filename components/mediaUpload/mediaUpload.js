@@ -1,5 +1,7 @@
+import { createForm } from 'antd-mini/es/Form/form';
+
 Component({
-  mixins: [],
+  mixins: [createForm()],
   data: {
     visible:false,
     actions:[
@@ -18,18 +20,6 @@ Component({
     column:{},
     onFileListChange:()=>{},
   },
-  
-  didMount() {
-    console.log('props',this.props);
-  },
-  didUpdate(prevProps,prevData) {
-    if(prevData.fileList.length !== this.data.fileList.length){
-      console.log('prevData',prevData);
-      console.log('this.props.onFileListChange',this.props.onFileListChange);
-      this.props.onFileListChange(this.props.column.name,this.data.fileList)
-      console.log('media name',this.props.column.name);
-    }
-  },
   didUnmount() {},
   methods: {
     mediaUpload(){
@@ -42,7 +32,7 @@ Component({
         visible:false
       })
     },
-    uploadFile(filePath,index,type){
+    uploadFile(filePath){
       my.uploadFile({
         url: 'http://172.19.3.40:8093/upload/image',
         fileName: 'file',
@@ -50,46 +40,51 @@ Component({
         filePath: filePath,
         fileType:'image',
         header:{
-          token:'eyJ0eXAiOiJKV1QiLCJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJyYW5kb20iOjc2MDcyMzQ5MCwiZXhwIjoxNjc2MjYzMzUwLCJpYXQiOjE2NzYwMDQxNTAsImFjY291bnQiOiJhZG1pbiIsInN0YXR1cyI6Ik5PUk1BTCJ9.iK9fseKS_3W8pvF1zBnA9yYjbj0Huk8_hf_2CZ4Eddg'
+          token:'eyJ0eXAiOiJKV1QiLCJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJyYW5kb20iOjI1MDI4OTcyOSwiZXhwIjoxNjc2Nzg5MTI1LCJpYXQiOjE2NzY1Mjk5MjUsImFjY291bnQiOiLlsI_njosiLCJzdGF0dXMiOiJOT1JNQUwifQ.zs-wnVILuGdTHJj0u9DUeuS5Hsj_6Jg3yzlKuysB6JQ'
         },
         success: (res) => {
+          const length = this.data.fileList.length
           this.setData({
-            [`fileList[${index}]`]:{url:JSON.parse(res.data).data,status:'success',type:type}
+            [`fileList[${length-1}]`]:JSON.parse(res.data).data
           })
         },
-        fail: function(error) {
+        fail: (error)=> {
           my.showToast({
             type: 'error',
             content: '上传失败！',
             duration: 2000
           });
-          const newFileList = this.data.fileList.splice(index-1,1)
+          let newFileList = this.data.fileList
+          newFileList.pop()
           this.setData({
             fileList:newFileList
           })
         },
+        complete:()=>{
+          this.emit('onChange', this.data.fileList);
+        }
       });
     },
-    handleAction(item,index,event){
+    handleAction(item){
       const action =item.key==='image'?'chooseImage':'chooseVideo'
       const option ={
         count:this.props.column.count||1,
         success:item.key==='image'?
           ({apFilePaths})=> {
             apFilePaths.map(i=>{
-              const index = this.data.fileList.length
-              this.setData({
-                [`fileList[${index}]`]:{status:'uploading',type:item.key}
-              })
-              this.uploadFile(i,index,item.key)
+              let newList = this.data.fileList
+              newList.push('')
+              this.setData({'fileList':newList})
+              this.uploadFile(i)
             })
+            
+          console.log('1')
           }:
             ({tempFilePath})=> {
-              const index = this.data.fileList.length
-              this.setData({
-                [`fileList[${index}]`]:{status:'uploading',type:item.key}
-              })
-              this.uploadFile(tempFilePath,index,item.key)
+              let newList = this.data.fileList
+              newList.push('')
+              this.setData({'fileList':newList})
+              this.uploadFile(tempFilePath)
             }
             ,
         fail:({error})=>{
@@ -106,9 +101,14 @@ Component({
     removeFile(e){
       const newFileList = this.data.fileList
       newFileList.splice(e.target.dataset.index,1)
-      this.setData({
-        fileList:newFileList
-      })
+      this.setData({fileList:newFileList})
+      this.emit('onChange', this.data.fileList);
+    },
+    handlePreview(e){
+      console.log('e',e);
+      dd.previewImage({
+        urls: [`http://172.19.3.40:8093${e.target.dataset.url}`]
+      });
     }
   },
 });

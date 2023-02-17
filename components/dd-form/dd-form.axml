@@ -194,26 +194,13 @@
   ></form-range-picker>
 
 <!-- media -->
-<form-item
-  a:elif="{{item.el==='media'}}"
-  className="{{item.className}}"
-  position="{{item.position}}"
-  label="{{item.label}}"
-  status="{{item.status}}"
-  errors="{{item.errors}}"
-  tooltip="{{item.tooltip}}"
-  required="{{item.required}}"
-  requiredMark="{{item.requiredMark}}"
-  validateStatus="{{item.validateStatus}}"
-  help="{{help}}"
-  onFileListChange="onFileListChange"
-  onTap="onFileListChange"
-  >
-    <form-media
-      value="{{value}}"
-      item="{{item}}"
-    />
-  </form-item>
+
+  <form-media
+    a:elif="{{item.el==='media'}}"
+    name="{{item.name}}"
+    column={{item}}
+    ref="handleRef"
+  />
 
 <!-- stepper计数器 -->
 <form-stepper 
@@ -346,22 +333,4 @@
 
   <slot a:else name="{{item.name}}" value="{{item}}" />
 </block>
-
-
-<!-- <button
-  type="{{config.submit.type}}"
-  style="{{config.submit.style}}"
-  onTap="submit"
->
-  {{config.submit.text}}
-</button>
-
-<button
-  type="{{config.reset.type}}"
-  style="{{config.reset.style}}"
-  onTap="reset"
->
-  {{config.reset.text}}
-</button> -->
-
 

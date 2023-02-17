@@ -18,20 +18,10 @@ Page({
         message: '提交需要有地址',
       },
       {
-        el: 'slot',
-        label: '水果',
-        name: 'fruit',
-        placeholder: '请输入数量',
-        required: true,
-        message: '提交需要有数量',
-      },
-      {
-        el: 'stepper',
-        label: '数量',
-        name: 'quantity',
-        placeholder: '请输入数量',
-        required: true,
-        message: '提交需要有数量',
+        el: 'media',
+        label: '上传图片',
+        count:9,
+        name: 'media',
       },
       {
         el: 'slot',
@@ -57,37 +47,40 @@ Page({
     },
   },
   onLoad() {
-    // this.setData({
-    //   config: {
-    //     initialValues: {
-    //       account: 'lily'
-    //     },
-    //     submit: {
-    //       text: '提交',
-    //       type: 'primary',
-    //       style: 'margin: 12px',
-    //     },
-    //     reset: {
-    //       text: '重置',
-    //       type: 'default',
-    //       style: 'margin: 12px',
-    //     },
-    //   },
-    // });
   },
   formItems: [],
   handleFormJSONRef(ref) {
     this.formItems.forEach(formItem => {
       ref.form.addItem(formItem);
     });
+    this.ref=ref
   },
   handleRef(ref) {
     this.formItems.push(ref);
   },
-  onSuccess(values) {
-    my.alert({
-      title: '提交',
-      content: JSON.stringify(values, null, 2),
-    });
+  async onSuccess() {
+    // const values = await this.ref.form.submit();
+    // console.log('values',values);
+    await dd.chooseDingTalkDir({
+      success: (res) => {
+          console.log('res',res);
+      },
+      fail: (err) =>{
+          dd.alert({
+              content:JSON.stringify(err)
+          })
+      }
+  })
+    
+    dd.uploadAttachmentToDingTalk({
+      file: {spaceId:"21033695351",max:1},
+      types:["file"],//PC端仅支持["photo","file","space"]
+      success: (res) => {
+        console.log('res',res);
+      },
+      fail: (err) =>{
+        console.log('err',err);
+      }
+  })
   },
 });
