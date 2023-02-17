@@ -109,7 +109,6 @@ Page({
     },{
       label:'图片',
       name:'media',
-      required:true,
       el:'media',
       count:9,
       tip:'最多可上传九张图片/视频'

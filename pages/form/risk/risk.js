@@ -121,12 +121,10 @@ Page({
     },{
       label:'是否停用',
       name:'stop',
-      required:true,
       el:'switch',
     },{
       label:'上传图片/视频',
       name:'media',
-      required:true,
       labelWidth:'110px',
       el:'media',
       count:9,

@@ -1,4 +1,14 @@
-<form-item label="资产编码" name="id" required>
+<form-item 
+  className="{{className}}"
+  position="{{position}}"
+  label="{{label}}"
+  status="{{formData.status}}"
+  errors="{{formData.errors}}"
+  tooltip="{{tooltip}}"
+  required="{{formData.required}}"
+  requiredMark="{{requiredMark}}"
+  validateStatus="{{validateStatus}}"
+  help="{{help}}">
   <input  placeholder="请输入内容" onChange="onChange" style="float:left;"/>
   <icon type="ScanningOutline" style="font-size: 20px;float:right;" onTap="onScanning" />
 </form-item>

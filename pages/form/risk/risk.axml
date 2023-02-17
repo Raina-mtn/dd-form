@@ -5,7 +5,7 @@
     ref="handleFormJSONRef"
     >
     <view slot="id" slot-scope="item">
-      <assets-id name="id" ref="handleRef"/>
+      <assets-id label="资产编码" name="id" required="{{true}}" message="需要选择资产编码" ref="handleRef"/>
     </view>
     <view slot="tip">
      <view style="color:#666;margin:5px;">
