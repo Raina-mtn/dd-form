@@ -1,4 +1,4 @@
-.risk-btns{
+.event-btns{
   background-color: #fff;
   height: 50px;
   position: fixed;
@@ -6,7 +6,7 @@
   display: flex;
   width: 100%;
 }
-.risk-btn{
+.event-btn{
   height: 40px;
   line-height: 20px;
   flex: auto ;

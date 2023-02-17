@@ -2,14 +2,10 @@
   <dd-form
     initialValues="{{formData}}"
     columns="{{columns}}"
-    formData="{{formData}}"
-    onFormChange="onFormChange"
+    ref="handleFormJSONRef"
     >
-    <view slot="id">
-      <form-item label="资产编码" required>
-        <input  data-name="id" controlled="{{true}}" value="{{formData.id}}" placeholder="请输入内容" onChange="onInputChange" style="float:left;"/>
-        <icon type="ScanningOutline" style="font-size: 20px;float:right;" onTap="onScanning" />
-      </form-item>
+    <view slot="id" slot-scope="item">
+      <assets-id name="id" ref="handleRef"/>
     </view>
     <view slot="tip">
      <view style="color:#666;margin:5px;">
@@ -20,8 +16,8 @@
       D类： 不影响运营安全、生产效率、服务质量和设施设备可靠性，宜通过集中整治方式修复的故障，以及食堂设备，办公设备类故障。 要求修复时间：168小时（7天）
      </view>
     </view>
-    <view slot="btns" class="risk-btns">
-      <button class="risk-temporary" onTap="temporary">暂存</button>
-      <button class="risk-submit" type="primary" onTap="submit">提交</button>
+    <view slot="btns" class="risk-btns" style="{{model.indexOf('iphone')!== -1 ? 'padding-bottom:20px;':''}}">
+      <button class="risk-btn" onTap="temporary">暂存</button>
+      <button class="risk-btn" type="primary" onTap="submit">提交</button>
   </dd-form>
 </view>

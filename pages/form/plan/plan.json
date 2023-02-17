@@ -2,7 +2,7 @@
   "usingComponents": {
     "dd-form": "/components/dd-form/dd-form",
     "button": "antd-mini/es/Button/index",
-    "assets-id":"./components/assetsId/assetsId"
+    "form-item":"antd-mini/es/Form/FormItem/index"
   },
   "styleIsolation": "shared"
 }

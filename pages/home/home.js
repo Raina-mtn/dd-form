@@ -8,15 +8,18 @@ Page({
       },
       {
         name:'临时检修工单',
-        image:'/image/trobleTicket.png'
+        image:'/image/trobleTicket.png',
+        url:'/pages/form/temporary/temporary'
       },
       {
         name:'计划检修工单',
-        image:'/image/trobleTicket.png'
+        image:'/image/trobleTicket.png',
+        url:'/pages/form/plan/plan'
       },
       {
         name:'事件提报',
-        image:'/image/trobleTicket.png'
+        image:'/image/trobleTicket.png',
+        url:'/pages/form/event/event'
       },
     ]
   },

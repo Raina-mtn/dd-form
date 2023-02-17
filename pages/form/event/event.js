@@ -1,33 +1,18 @@
 Page({
   data: {
     formData:{},
-    levelOptions:[{ 
-      label: 'A', 
-      value: 'A' 
-    },{ 
-      label: 'B', 
-      value: 'B' 
-    },{ 
-      label: 'C', 
-      value: 'C' 
-    },{ 
-      label: 'D', 
-      value: 'D' 
-    }],
     columns:[{
-      label:'资产编码',
-      name:'id',
-      required:true,
-      el:'slot'
-    },{
-      label:'资产名称',
-      name:'name',
-      required:true,
-      allowClear:true,
-      el:'input'
-    },{
       label:'线路',
       name:'line',
+      required:true,
+      el:'picker',
+      options:[
+        { label: '四号线', value: '4' },
+        { label: '五号线', value: '5' },
+      ],
+    },{
+      label:'车/站/段/所',
+      name:'station',
       required:true,
       el:'picker',
       options:[
@@ -67,67 +52,64 @@ Page({
         }
       ]
     },{
-      label:'详细位置',
+      label:'事件概述',
       name:'textarea',
       required:true,
       allowClear:true,
       el:'textarea'
     },{
-      label:'故障等级',
-      name:'level',
-      required:true,
-      el:'picker',
-      options:[
-        { label: 'A', value: 'A' },
-        { label: 'B', value: 'B' },
-        { label: 'C', value: 'C' },
-        { label: 'D', value: 'D' }
-      ],
-    },{
-      label:'',
-      name:'tip',
-      el:'slot',
-    },{
-      label:'故障现象',
-      name:'detail',
-      required:true,
-      allowClear:true,
-      el:'textarea'
-    },{
-      label:'专业调度',
-      name:'dispatch',
-      required:true,
-      el:'picker',
-      options:[
-        { label: '通信', value: '0' },
-        { label: '信号', value: '1' },
-        { label: 'OCC', value: '2' },
-        { label: '供电', value: '3' },
-        { label: '土建', value: '4' },
-        { label: '车辆', value: '5' },
-        { label: '施工', value: '6' },
-      ],
-    },{
-      label:'故障类型',
-      name:'type',
+      label:'可能的影响',
+      name:'affect',
       required:true,
       el:'picker',
       options:[
         { label: '行车安全', value: '0' },
         { label: '乘客服务', value: '1' },
         { label: '人员伤害', value: '2' },
-        { label: '其他', value: '3' }
+        { label: '其他', value: '3' },
       ],
     },{
-      label:'是否停用',
-      name:'stop',
+      label:'事件发现人',
+      name:'discoverName',
       required:true,
-      el:'switch',
+      allowClear:true,
+      el:'input'
     },{
-      label:'上传图片/视频',
+      label:'发现人电话',
+      name:'discoverTel',
+      required:true,
+      allowClear:true,
+      el:'input'
+    },{
+      label:'事件报告人',
+      name:'reportName',
+      required:true,
+      allowClear:true,
+      el:'input'
+    },{
+      label:'报告人部门',
+      name:'reportDev',
+      required:true,
+      allowClear:true,
+      el:'input'
+    },{
+      label:'事件创建时间',
+      name:'creatTime',
+      required:true,
+      precision:'second',
+      el:'date',
+      format:"YYYY-MM-DD HH:mm:ss",
+    },{
+      label:'事件提报时间',
+      name:'reportTime',
+      required:true,
+      precision:'second',
+      el:'date',
+      format:"YYYY-MM-DD HH:mm:ss",
+    },{
+      label:'图片',
       name:'media',
       required:true,
-      labelWidth:'110px',
       el:'media',
       count:9,
       tip:'最多可上传九张图片/视频'
@@ -152,7 +134,7 @@ Page({
     this.formItems=[]
     this.setData({'model':getApp().globalData.model})
     dd.setNavigationBar({
-      title: '故障工单'})
+      title: '事件提报'})
   },
   async submit(){
     const values = await this.ref.form.submit();

@@ -1,0 +1,4 @@
+<form-item label="资产编码" name="id" required>
+  <input  placeholder="请输入内容" onChange="onChange" style="float:left;"/>
+  <icon type="ScanningOutline" style="font-size: 20px;float:right;" onTap="onScanning" />
+</form-item>

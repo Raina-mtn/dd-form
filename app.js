@@ -1,6 +1,6 @@
 import {apiLogin} from './api/interface/index'
 App({
-  onLaunch(options) {
+  async onLaunch(options) {
     // 第一次打开
     // options.query == {number:1}
     console.info('App onLaunch');

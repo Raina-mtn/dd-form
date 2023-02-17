@@ -1,47 +1,66 @@
-<view>
-  <view class="mediaUpload">
-    <view
-      class="mediaUpload-wrapper" 
-      a:for="{{ fileList }}" 
-      a:key="*this"
-    >
-      <icon type="CloseCircleOutline" data-index="{{index}}" className="mediaUpload-close" onTap="removeFile" />
-      <view a:if="{{item.status === 'uploading'}}" class="mediaUpload-cover-loading">
-        <loading color="#2c6ee5" class="mediaUpload-loading"/>
-        <view class="mediaUpload-loading-text">
-          上传中...
+<import-sjs from="./utils.sjs" name="utils" />
+
+<form-item
+  className="{{column.className}}"
+  position="{{column.position}}"
+  label="{{column.label}}"
+  status="{{column.status}}"
+  errors="{{column.errors}}"
+  tooltip="{{column.tooltip}}"
+  required="{{column.required}}"
+  requiredMark="{{column.requiredMark}}"
+  labelWidth="{{column.labelWidth}}"
+  validateStatus="{{column.validateStatus}}"
+  help="{{column.help}}"
+  >
+    <view class="mediaUpload">
+      <view
+        class="mediaUpload-wrapper" 
+        a:for="{{ formData.value }}" 
+        a:key="*this"
+      >
+        <icon type="CloseCircleOutline" data-index="{{index}}" className="mediaUpload-close" onTap="removeFile" />
+        <view a:if="{{item===''}}" class="mediaUpload-cover-loading">
+          <loading color="#2c6ee5" class="mediaUpload-loading"/>
+          <view class="mediaUpload-loading-text">
+            上传中...
+          </view>
         </view>
+        <view a:else>
+          <video 
+            a:if="{{utils.isVideo(item)}}"
+            class="mediaUpload-video" 
+            src="{{'http://172.19.3.40:8093'+item}}"
+            enableNative="{{true}}"
+            objectFit="contain"
+          ></video>
+          <image 
+            a:else
+            class="mediaUpload-image" 
+            mode="aspectFit"
+            data-url="{{item}}"
+            src="{{'http://172.19.3.40:8093'+item}}"
+            onTap="handlePreview"
+          ></image>
+        </view>
+        
       </view>
-      <image 
-        a:if="{{item.type === 'image'&&item.status === 'success'}}"
-        class="mediaUpload-image" 
-        mode="aspectFit"
-        src="{{'http://172.19.3.40:8093'+item.url}}"
-      ></image>
-      <video 
-        a:if="{{item.type === 'video'&&item.status === 'success'}}"
-        class="mediaUpload-video" 
-        src="{{'http://172.19.3.40:8093'+item.url}}"
-        enableNative="{{true}}"
-        objectFit="contain"
-      ></video>
+
+      <view 
+        a:if="{{formData.value.length < column.count ||!formData.value }}" 
+        class="mediaUpload-add" 
+        onTap="mediaUpload"
+      >
+        <icon type="AddOutline" className="mediaUpload-add" />
+      </view>
     </view>
 
-    <view 
-      a:if="{{fileList.length < column.count && !disabled}}" 
-      class="mediaUpload-add" 
-      onTap="mediaUpload"
-    >
-      <icon type="AddOutline" className="mediaUpload-add" />
-    </view>
-  </view>
-
-  <action-sheet
-    title="请选择你要进行的操作"
-    visible="{{visible}}"
-    actions="{{actions}}"
-    onAction="handleAction"
-    onClose="handleCloseBasic"
-  ></action-sheet>
-  <text class="mediaUpload-tip">{{column.tip}}</text>  
-</view>
+    <action-sheet
+      title="请选择你要进行的操作"
+      visible="{{visible}}"
+      actions="{{actions}}"
+      onAction="handleAction"
+      onClose="handleCloseBasic"
+    ></action-sheet>
+    <text class="mediaUpload-tip">{{column.tip}}</text> 
+</form-item>

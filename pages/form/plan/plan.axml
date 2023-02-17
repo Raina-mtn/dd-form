@@ -1,0 +1,18 @@
+<view>
+  <dd-form
+    initialValues="{{formData}}"
+    columns="{{columns}}"
+    ref="handleFormJSONRef"
+    >
+    <view slot="fileUpload">
+      <form-item label="上传文件">
+        <button  type="primary" inline >
+          点击上传文件
+        </button>
+      </form-item>
+    </view>
+    <view slot="btns" class="plan-btns" style="{{model.indexOf('iphone')!== -1 ? 'padding-bottom:20px;':''}}">
+      <button class="plan-btn" onTap="temporary">暂存</button>
+      <button class="plan-btn" type="primary" onTap="submit">提交</button>
+  </dd-form>
+</view>
