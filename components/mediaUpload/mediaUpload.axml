@@ -47,7 +47,7 @@
       </view>
 
       <view 
-        a:if="{{formData.value.length < column.count ||!formData.value }}" 
+        a:if="{{formData.value.length < column.count ||!formData.value||!column.disabled }}" 
         class="mediaUpload-add" 
         onTap="mediaUpload"
       >

@@ -4,20 +4,5 @@
     columns="{{columns}}"
     formData="{{formData}}"
     >
-    <view slot="image">
-      <form-item label="上传图片/视频" labelWidth="110px" class="image-wrapper">
-        <image 
-          class="image"
-          onTap="onTap"
-          mode="aspectFit" 
-          src="/image/robot.png" 
-          />
-        <video 
-          class="image"
-          src="http://172.19.3.40:8093/upload-image/1a17315c5b504c1fbf7fa3d14f9f5527.mp4"
-          enableNative="{{true}}"
-          ></video>
-      </form-item>
-    </view>
   </dd-form>
 </view>

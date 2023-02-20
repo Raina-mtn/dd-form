@@ -11,5 +11,8 @@ Component({
     handleRef(ref) {
       this.form.addItem(ref);
     },
+    cascaderFormat(value,column){
+      return column&&column.map((c) => c && c.label).join('/');
+    }
   },
 });

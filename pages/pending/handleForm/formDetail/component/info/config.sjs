@@ -114,7 +114,8 @@ export const riskForm=[{
 },{
   label:'上传图片/视频',
   name:'image',
-  el:'slot',
+  labelWidth:'110px',
+  el:'media',
   count:9,
   disabled:true
 },]
