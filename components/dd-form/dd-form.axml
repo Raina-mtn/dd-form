@@ -198,7 +198,7 @@
   <form-media
     a:elif="{{item.el==='media'}}"
     name="{{item.name}}"
-    column={{item}}
+    column="{{item}}"
     ref="handleRef"
   />
 

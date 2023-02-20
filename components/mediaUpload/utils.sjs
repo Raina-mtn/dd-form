@@ -1,4 +1,4 @@
-const isVideo = url=>{
+const isVideo = (url)=>{
   const videolist = ['mp4', 'm2v', 'mkv']
   var urlArr = url.split('.');
   const suffix = urlArr[urlArr.length - 1];
