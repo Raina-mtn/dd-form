@@ -16,10 +16,9 @@ Component({
     ],
     fileList:[],
   },
-  props: {
-    column:{}
+  didMount() {
+    console.log('s',this.props);
   },
-  didMount() {},
   didUnmount() {},
   methods: {
     mediaUpload(){
@@ -68,7 +67,7 @@ Component({
     handleAction(item){
       const action =item.key==='image'?'chooseImage':'chooseVideo'
       const option ={
-        count:this.props.column.count||1,
+        count:this.props.count||1,
         success:item.key==='image'?
           ({apFilePaths})=> {
             apFilePaths.map(i=>{
@@ -77,8 +76,6 @@ Component({
               this.setData({'fileList':newList})
               this.uploadFile(i)
             })
-            
-          console.log('1')
           }:
             ({tempFilePath})=> {
               let newList = this.data.fileList
@@ -105,7 +102,6 @@ Component({
       this.emit('onChange', this.data.fileList);
     },
     handlePreview(e){
-      console.log('e',e);
       dd.previewImage({
         urls: [`http://172.19.3.40:8093${e.target.dataset.url}`]
       });

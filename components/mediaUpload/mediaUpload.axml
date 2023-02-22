@@ -1,17 +1,18 @@
 <import-sjs from="./utils.sjs" name="utils" />
 
 <form-item
-  className="{{column.className}}"
-  position="{{column.position}}"
-  label="{{column.label}}"
-  status="{{column.status}}"
-  errors="{{column.errors}}"
-  tooltip="{{column.tooltip}}"
-  required="{{column.required}}"
-  requiredMark="{{column.requiredMark}}"
-  labelWidth="{{column.labelWidth}}"
-  validateStatus="{{column.validateStatus}}"
-  help="{{column.help}}"
+  className="{{className}}"
+  position="{{position}}"
+  label="{{label}}"
+  status="{{formData.status}}"
+  errors="{{formData.errors}}"
+  tooltip="{{tooltip}}"
+  required="{{required}}"
+  requiredMark="{{requiredMark}}"
+  validateStatus="{{validateStatus}}"
+  help="{{help}}"
+  labelWidth="{{labelWidth}}"
+  message="{{message}}" 
   >
     <view class="mediaUpload">
       <view
@@ -47,7 +48,7 @@
       </view>
 
       <view 
-        a:if="{{(formData.value.length < (column.count||1) ||!formData.value)&&!column.disabled }}" 
+        a:if="{{(formData.value.length < (count||1) ||!formData.value)&&!disabled }}" 
         class="mediaUpload-add" 
         onTap="mediaUpload"
       >
@@ -62,5 +63,5 @@
       onAction="handleAction"
       onClose="handleCloseBasic"
     ></action-sheet>
-    <text class="mediaUpload-tip">{{column.tip}}</text> 
+    <text class="mediaUpload-tip">{{tip}}</text> 
 </form-item>

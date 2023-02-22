@@ -3,33 +3,16 @@ import { createForm } from 'antd-mini/es/Form/form';
 Component({
   mixins: [createForm()],
   data: {
-    fileList:[{
-      fileId: "96681992036",
-      fileName: "1312323sdfgbdsdasfsDZFFSDASFGTHDS12.xlsx",
-      fileSize: 9068,
-      fileType: "xlsx",
-      spaceId: "7272757090",
-    },{
-      fileId: "96681992036",
-      fileName: "13123132.xlsx",
-      fileSize: 9068,
-      fileType: "xlsx",
-      spaceId: "7272757090",
-    }]
+    fileList:[]
   },
-  props: {
-    column:{}
-  },
-  didMount() {
-    console.log('column',this.props.column.max);
-  },
+  didMount() {},
   didUpdate() {},
   didUnmount() {},
   methods: {
     handleUpload(){
       dd.uploadAttachmentToDingTalk({
-        space:{spaceId:"12345",max:this.props.column.max||1},
-        file: {spaceId:"12345",max:this.props.column.max||1},
+        space:{spaceId:"12345",max:this.props.max||1},
+        file: {spaceId:"12345",max:this.props.max||1},
         types:["file","space"],//PC端仅支持["photo","file","space"]
         success: (res) => {
           console.log('res',res);

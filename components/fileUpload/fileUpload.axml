@@ -1,26 +1,27 @@
 <form-item
-  className="{{column.className}}"
-  position="{{column.position}}"
-  label="{{column.label}}"
-  label="{{column.name}}"
-  status="{{column.status}}"
-  errors="{{column.errors}}"
-  tooltip="{{column.tooltip}}"
-  required="{{column.required}}"
-  requiredMark="{{column.requiredMark}}"
-  labelWidth="{{column.labelWidth}}"
-  validateStatus="{{column.validateStatus}}"
-  help="{{column.help}}"
+  className="{{className}}"
+  position="{{position}}"
+  label="{{label}}"
+  label="{{name}}"
+  tooltip="{{tooltip}}"
+  required="{{required}}"
+  requiredMark="{{requiredMark}}"
+  labelWidth="{{labelWidth}}"
+  validateStatus="{{validateStatus}}"
+  help="{{help}}"
+  message="{{message}}"
+  status="{{formData.status}}"
+  errors="{{formData.errors}}"
   >
-  <button  type="primary" inline onTap="handleUpload" a:if="{{ fileList.length < (column.max||1) && !column.disabled }}">
-    {{column.text}}
+  <button  type="primary" inline onTap="handleUpload" a:if="{{ fileList.length < (max||1) && !disabled }}">
+    {{text}}
   </button>
 
   <view class="fileUpload-fileList" a:for="{{ fileList }}" a:key="{{item.fileId}}">
     <view class="fileUpload-file">
       <view class="fileUpload-text" data-file="{{item}}" onTap="handlePreview">
         <icon type="TextOutline" />{{item.fileName}}</view>
-      <icon a:if="{{ !column.disabled }}" data-index="{{index}}" type="CloseCircleOutline" style="margin:auto 0;" onTap="removeFile" />
+      <icon a:if="{{ !disabled }}" data-index="{{index}}" type="CloseCircleOutline" style="margin:auto 0;" onTap="removeFile" />
     </view>
   </view>
 </form-item>
