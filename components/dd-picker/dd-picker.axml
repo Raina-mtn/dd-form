@@ -1,0 +1,35 @@
+<form-item
+  name="{{name}}" 
+  label="{{label}}" 
+  position="{{position}}" 
+  validateStatus="{{validateStatus}}" 
+  help="{{help}}" 
+  tooltip="{{tooltip}}" 
+  required="{{required}}" 
+  requiredMark="{{requiredMark}}" 
+  labelWidth="{{labelWidth}}" 
+>
+  <picker 
+    className="{{column.className}}" 
+    defaultValue="{{column.defaultValue}}" 
+    disabled="{{column.disabled}}" 
+    cancelText="{{column.cancelText}}" 
+    content="{{column.content}}" 
+    indicatorStyle="{{column.indicatorStyle}}" 
+    indicatorClassName="{{column.indicatorClassName}}" 
+    maskClassName="{{column.maskClassName}}" 
+    maskClosable="{{column.maskClosable}}" 
+    maskStyle="{{column.maskStyle}}" 
+    okText="{{column.okText}}" 
+    options="{{list}}" 
+    placeholder="{{column.placeholder||`请选择${column.label}`}}" 
+    popClassName="{{column.popClassName}}" 
+    popStyle="{{column.popStyle}}" 
+    prefix="{{column.prefix}}" 
+    style="{{column.style}}" 
+    suffix="{{column.suffix}}" 
+    title="{{column.title}}"
+    onOk="pickerChange" 
+  >
+  </picker>
+</form-item>

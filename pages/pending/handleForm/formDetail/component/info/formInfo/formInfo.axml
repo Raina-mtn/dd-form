@@ -1,8 +1,0 @@
-<view>
-  <dd-form
-    initialValues="{{formData}}"
-    columns="{{columns}}"
-    formData="{{formData}}"
-    >
-  </dd-form>
-</view>

@@ -1,0 +1,26 @@
+<form-item
+  className="{{column.className}}"
+  position="{{column.position}}"
+  label="{{column.label}}"
+  label="{{column.name}}"
+  status="{{column.status}}"
+  errors="{{column.errors}}"
+  tooltip="{{column.tooltip}}"
+  required="{{column.required}}"
+  requiredMark="{{column.requiredMark}}"
+  labelWidth="{{column.labelWidth}}"
+  validateStatus="{{column.validateStatus}}"
+  help="{{column.help}}"
+  >
+  <button  type="primary" inline onTap="handleUpload" a:if="{{ fileList.length < (column.max||1) && !column.disabled }}">
+    {{column.text}}
+  </button>
+
+  <view class="fileUpload-fileList" a:for="{{ fileList }}" a:key="{{item.fileId}}">
+    <view class="fileUpload-file">
+      <view class="fileUpload-text" data-file="{{item}}" onTap="handlePreview">
+        <icon type="TextOutline" />{{item.fileName}}</view>
+      <icon a:if="{{ !column.disabled }}" data-index="{{index}}" type="CloseCircleOutline" style="margin:auto 0;" onTap="removeFile" />
+    </view>
+  </view>
+</form-item>

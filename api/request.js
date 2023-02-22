@@ -16,14 +16,14 @@ const httpReq = ({url,method, config={}, data, msg='加载中...', isLoginReques
         const prevPages = getCurrentPages() // 当前打开的所有页面
         const currentPage = prevPages[prevPages.length-1].route
         const app = getApp()
-        if(!dd.getStorageSync({key: 'token'}).data && !isLoginRequest){ // 未登录先去登录
+        if(!dd.getStorageSync({key: 'Authentication'}).data && !isLoginRequest){ // 未登录先去登录
          await app.login()
         }
-        const token = dd.getStorageSync({key: 'token'})
+        const Authentication = dd.getStorageSync({key: 'Authentication'})
         const headers = {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
             ...config.headers,
-            token
+            Authentication
         }
         // Content-Type为application/json时，data参数只支持json字符串，用户需要手动调用JSON.stringify进行序列化
         let params = {...data}
@@ -39,14 +39,14 @@ const httpReq = ({url,method, config={}, data, msg='加载中...', isLoginReques
             success: function(res){
                 dd.hideLoading()
                 if(res.status === 200){ // 请求成功
-                    if(res.data.code === 1){ // 接口正确返回状态码
-                        resolve(res.data)
+                    if(res.data.code === 1 || url==='/oauth/token'){ // 接口正确返回状态码
+                        resolve(res)
                     }else{
-                        app.showToast( res.data.msg)
-                        reject(res.data)
+                        app.showToast( res)
+                        reject(res)
                     }
                 }else{
-                    reject(res.data)
+                    reject(res)
                 }
             },
             fail: function(res){ // 请求失败

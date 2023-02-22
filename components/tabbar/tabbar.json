@@ -1,6 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "tab-bar": "antd-mini/es/TabBar/index"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "icon": "antd-mini/es/Icon/index",
-    "dd-form": "/components/dd-form/dd-form"
-  }
-}

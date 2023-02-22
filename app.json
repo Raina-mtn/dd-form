@@ -1,21 +1,6 @@
 {
   "pages": [
-    "pages/home/home",
-    "pages/pending/pending",
-    "pages/my/my",
-    "pages/pending/pending",
-    "pages/index/index",
-    "pages/done/done",
-    "pages/form/risk/risk",
-    "pages/pending/handleForm/formDetail/formDetail",
-    "pages/pending/handleForm/formDetail/pages/reject/reject",
-    "pages/pending/handleForm/formDetail/pages/handle/handle",
-    "pages/pending/handleForm/formDetail/pages/delay/delay",
-    "pages/draft/draft",
-    "pages/mySubmit/mySubmit",
-    "pages/form/plan/plan",
-    "pages/form/temporary/temporary",
-    "pages/form/event/event"
+    "pages/risk/risk"
   ],
   "window": {
     "defaultTitle": "设施设备维护"
@@ -26,22 +11,10 @@
     "backgroundColor": "#F5F5F9",
     "items": [
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/risk/risk",
         "icon": "image/home.png",
         "activeIcon": "image/home_active.png",
         "name": "首页"
-      },
-      {
-        "pagePath": "pages/pending/pending",
-        "icon": "image/pending.png",
-        "activeIcon": "image/pending_active.png",
-        "name": "待办"
-      },
-      {
-        "pagePath": "pages/my/my",
-        "icon": "image/my.png",
-        "activeIcon": "image/my_active.png",
-        "name": "我的"
       }
     ]
   },

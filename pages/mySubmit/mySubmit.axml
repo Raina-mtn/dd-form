@@ -1,7 +1,0 @@
-<view>
-  <tabs items="{{items}}" current="{{current}}" onChange="handleChangeTab">
-    <view class="content" slot-scope="item">
-      <pending-card type="draft" title="GZ20230109006" grade="A" reportTime="2023-01-23" isExceed="{{true}}" detail="螺丝松动"/>
-    </view>
-  </tabs>
-</view>

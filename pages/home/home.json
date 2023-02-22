@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "list": "antd-mini/es/List/index",
-    "list-item": "antd-mini/es/List/ListItem/index",
-    "switch": "antd-mini/es/Switch/index",
-    "page-head": "/components/pageHead/pageHead"
-  }
-}

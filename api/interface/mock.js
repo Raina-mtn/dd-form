@@ -37,6 +37,7 @@ const riskMock1={
     dispatch:'3',
     type:'3',
     stop:true,
+    image:['/upload-image/32b52bbdb01545099b747b2f91188af2.png', '/upload-image/d1ef62d93da34755a224a7f206da7f81.mp4']
   },
   dispatch:{
     finishTime:'2023-0106 12:22:51',
@@ -59,6 +60,7 @@ const riskMock2={
     dispatch:'3',
     type:'3',
     stop:true,
+    image:['/upload-image/32b52bbdb01545099b747b2f91188af2.png', '/upload-image/d1ef62d93da34755a224a7f206da7f81.mp4']
   },
   dispatch:{
     finishTime:'2023-0106 12:22:51',
@@ -88,6 +90,7 @@ const riskMock3={
     dispatch:'3',
     type:'3',
     stop:true,
+    image:['/upload-image/32b52bbdb01545099b747b2f91188af2.png', '/upload-image/d1ef62d93da34755a224a7f206da7f81.mp4']
   },
   dispatch:{
     finishTime:'2023-0106 12:22:51',
@@ -117,6 +120,7 @@ const riskMock4={
     dispatch:'3',
     type:'3',
     stop:true,
+    image:['/upload-image/32b52bbdb01545099b747b2f91188af2.png', '/upload-image/d1ef62d93da34755a224a7f206da7f81.mp4']
   }
 }
 
@@ -152,4 +156,38 @@ export const geProgressMock = (data) =>new  Promise((resolve=>{
   }else if(data.id ==='GZ20230109009'){
     resolve({data: riskProgressMock4})
   }
+}))
+
+const options = [
+  { label: '四号线', value: '4' },
+  { label: '五号线', value: '5' },]
+
+  
+export const getOptionsMock = (data) =>new  Promise((resolve=>{
+  resolve({data: options})
+}))
+
+
+const assetList = [{
+  title:'结构',
+  value:0,
+},{
+  title:'隧道',
+  value:1,
+},{
+  title:'具体资产1',
+  value:2
+},{
+  title:'桥涵',
+  value:3,
+},{
+  title:'具体资产2',
+  value:4
+},{
+  title:'房屋建筑',
+  value:5
+}]
+
+export const getAssetListMock = (data) =>new  Promise((resolve=>{
+  resolve({data: assetList})
 }))

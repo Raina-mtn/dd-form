@@ -1,0 +1,13 @@
+.asstes-id-wrapper{
+  display: flex;
+  flex-direction: row;
+}
+
+.asstes-id-form{
+  width:80%;
+}
+
+.asstes-id-scanning{
+  font-size: 20px;
+  margin: auto;
+}

@@ -1,7 +1,0 @@
-<cover-view class="tab-bar">
-  <view class="items" >
-    <view a:for="{{list}}" onTap="tap" data-value={{item}} data-index={{index}}>
-      <view style="color: {{selected == index ? selectedColor : textColor}}">{{item.name}}</view>
-    </view>
-  </view>
-</cover-view>

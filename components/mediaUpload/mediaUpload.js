@@ -17,10 +17,9 @@ Component({
     fileList:[],
   },
   props: {
-    column:{},
-    onFileListChange:()=>{},
-    disabled:false
+    column:{}
   },
+  didMount() {},
   didUnmount() {},
   methods: {
     mediaUpload(){
@@ -41,7 +40,7 @@ Component({
         filePath: filePath,
         fileType:'image',
         header:{
-          token:'eyJ0eXAiOiJKV1QiLCJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJyYW5kb20iOjI1MDI4OTcyOSwiZXhwIjoxNjc2Nzg5MTI1LCJpYXQiOjE2NzY1Mjk5MjUsImFjY291bnQiOiLlsI_njosiLCJzdGF0dXMiOiJOT1JNQUwifQ.zs-wnVILuGdTHJj0u9DUeuS5Hsj_6Jg3yzlKuysB6JQ'
+          token:'eyJ0eXAiOiJKV1QiLCJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJyYW5kb20iOjQwMjA5OTA5NCwiZXhwIjoxNjc3MTIxODUxLCJpYXQiOjE2NzY4NjI2NTEsImFjY291bnQiOiJhZG1pbiIsInN0YXR1cyI6Ik5PUk1BTCJ9.8K_j0gmd4617QdbldTMx-cJO7u9tZiDiiekPp5EecC0'
         },
         success: (res) => {
           const length = this.data.fileList.length

@@ -1,0 +1,22 @@
+.fileUpload-fileList{
+  display: flex;
+  flex-direction: column;
+  text-align:left;
+}
+.fileUpload-file{
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.fileUpload-text{
+  width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.fileUpload-file:hover{
+  color: #4fa5ff;
+}

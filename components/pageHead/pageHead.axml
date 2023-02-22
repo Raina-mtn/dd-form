@@ -1,6 +1,0 @@
-<view>
-  <view class="pageHead-title">
-    {{title}}
-  </view>
-  <slot/>
-</view>

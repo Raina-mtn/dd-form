@@ -4,7 +4,7 @@
     "form-input": "antd-mini/es/Form/FormInput/index",
     "form-switch": "antd-mini/es/Form/FormSwitch/index",
     "form-stepper": "antd-mini/es/Form/FormStepper/index",
-    "form-picker": "antd-mini/es/Form/FormPicker/index",
+    "form-picker": "../dd-picker/dd-picker",
     "form-date-picker": "antd-mini/es/Form/FormDatePicker/index",
     "form-range-picker": "antd-mini/es/Form/FormRangePicker/index",
     "form-cascader-picker": "antd-mini/es/Form/FormCascaderPicker/index",
@@ -16,6 +16,7 @@
     "form-rate": "antd-mini/es/Form/FormRate/index",
     "form-textarea": "antd-mini/es/Form/FormTextarea/index",
     "form-media":"/components/mediaUpload/mediaUpload",
+    "form-file":"/components/fileUpload/fileUpload",
     "button": "antd-mini/es/Button/index"
   }
 }

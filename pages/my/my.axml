@@ -1,5 +1,0 @@
-<view>
-  <list  radius="{{true}}">
-    <list-item a:for="{{ itemList }}" a:key="*this" arrow="right" data-url="{{item.url}}" onTap="handleTap" imageSize="large">{{item.name}}</list-item>
-  </list>
-</view>

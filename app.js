@@ -5,31 +5,25 @@ App({
     // options.query == {number:1}
     console.info('App onLaunch');
     console.info("my.SDKVersion:" + my.SDKVersion);
-    this.globalData.corpId = options.query.corpId;
-    dd.getSystemInfo({
-      success: ({model}) => {
-        this.globalData.model =model.toLowerCase()
-      }
-    })
+
+
   },
   onShow(options) {
     // 从后台被 scheme 重新打开
-    // options.query == {number:1}
+    //获取Authentication
+    
   },
   globalData: {
     corpId:'',
     model:''
   },
   login(data){
-    return new Promise(resolve=>{
-      apiLogin({...data}).then(res=>{
-        resolve(res)
-        dd.setStorageSync({ // 登录成功后设置缓存
-          key: 'token',
-          data: res.data
-        })
+    apiLogin({...data}).then(res=>{
+      dd.setStorageSync({ // 登录成功后设置缓存
+        key: 'Authentication',
+        data: `${res.data.token_type} ${res.data.access_token}`
       })
-    }) 
+    })
   },
   showToast(content){
     dd.showToast({

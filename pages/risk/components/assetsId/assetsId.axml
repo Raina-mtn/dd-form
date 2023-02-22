@@ -1,0 +1,16 @@
+<view class="asstes-id-wrapper">
+  <form-item 
+    className="asstes-id-form"
+    position="{{position}}"
+    label="{{label}}"
+    status="{{formData.status}}"
+    errors="{{formData.errors}}"
+    tooltip="{{tooltip}}"
+    required="{{true}}"
+    requiredMark="{{requiredMark}}"
+    validateStatus="{{validateStatus}}"
+    help="{{help}}">
+    <input  placeholder="请输入内容" onChange="onChange"/>
+  </form-item>
+  <icon class="asstes-id-scanning" type="ScanningOutline" onTap="onScanning" />
+</view>

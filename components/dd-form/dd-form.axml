@@ -114,7 +114,7 @@
     className="{{item.className}}" 
     color="{{item.color}}" 
     defaultChecked="{{item.defaultChecked}}" 
-    disabled="{{item.disabled}}" 
+    disabled="{{true}}" 
     loading="{{item.loading}}" 
     checkedText="{{item.checkedText}}" 
     uncheckedText="{{item.uncheckedText}}" 
@@ -206,8 +206,36 @@
     a:elif="{{item.el==='media'}}"
     name="{{item.name}}"
     column="{{item}}"
+    required="{{item.required}}"
     ref="handleRef"
   />
+  
+  <!-- picker选择器 -->
+  <form-picker 
+    a:elif="{{item.el==='picker'}}"
+    name="{{item.name}}" 
+    label="{{item.label}}" 
+    position="{{item.position}}" 
+    validateStatus="{{item.validateStatus}}" 
+    help="{{item.help}}" 
+    tooltip="{{item.tooltip}}" 
+    required="{{item.required}}" 
+    message="{{item.message||`请选择${item.label}`}}" 
+    requiredMark="{{item.requiredMark}}" 
+    labelWidth="{{item.labelWidth}}" 
+    column="{{item}}" 
+    onFormChange="formChange"
+    ref="handleRef"
+  ></form-picker>
+
+
+  <!-- file文件上传 -->
+  <form-file 
+    a:elif="{{item.el==='file'}}"
+    name="{{item.name}}" 
+    column="{{item}}"
+    ref="handleRef"
+  ></form-file>
 
 <!-- stepper计数器 -->
 <form-stepper 
@@ -237,40 +265,6 @@
   ref="handleRef"
   ></form-stepper>
 
-  <!-- picker选择器 -->
-  <form-picker 
-    a:elif="{{item.el==='picker'}}"
-    name="{{item.name}}" 
-    label="{{item.label}}" 
-    position="{{item.position}}" 
-    validateStatus="{{item.validateStatus}}" 
-    help="{{item.help}}" 
-    tooltip="{{item.tooltip}}" 
-    required="{{item.required}}" 
-    message="{{item.message||`请选择${item.label}`}}" 
-    requiredMark="{{item.requiredMark}}" 
-    labelWidth="{{item.labelWidth}}" 
-    className="{{item.className}}" 
-    defaultValue="{{item.defaultValue}}" 
-    disabled="{{item.disabled}}" 
-    cancelText="{{item.cancelText}}" 
-    content="{{item.content}}" 
-    indicatorStyle="{{item.indicatorStyle}}" 
-    indicatorClassName="{{item.indicatorClassName}}" 
-    maskClassName="{{item.maskClassName}}" 
-    maskClosable="{{item.maskClosable}}" 
-    maskStyle="{{item.maskStyle}}" 
-    okText="{{item.okText}}" 
-    options="{{item.options}}" 
-    placeholder="{{item.placeholder||`请选择${item.label}`}}" 
-    popClassName="{{item.popClassName}}" 
-    popStyle="{{item.popStyle}}" 
-    prefix="{{item.prefix}}" 
-    style="{{item.style}}" 
-    suffix="{{item.suffix}}" 
-    title="{{item.title}}" 
-    ref="handleRef"
-  ></form-picker>
 
   
   <!-- rate-->
