@@ -12,11 +12,11 @@
   errors="{{formData.errors}}"
 >
   <picker 
+    value="{{formData.value}}" 
     className="{{className}}" 
     defaultValue="{{defaultValue}}" 
     disabled="{{disabled}}" 
     cancelText="{{cancelText}}" 
-    content="{{content}}" 
     indicatorStyle="{{indicatorStyle}}" 
     indicatorClassName="{{indicatorClassName}}" 
     maskClassName="{{maskClassName}}" 

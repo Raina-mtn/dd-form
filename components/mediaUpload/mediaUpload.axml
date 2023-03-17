@@ -17,10 +17,10 @@
     <view class="mediaUpload">
       <view
         class="mediaUpload-wrapper" 
-        a:for="{{ formData.value }}" 
+        a:for="{{ fileList }}" 
         a:key="*this"
       >
-        <icon type="CloseCircleOutline" data-index="{{index}}" className="mediaUpload-close" onTap="removeFile" />
+        <icon a:if="{{ !disabled }}" type="CloseCircleOutline" data-index="{{index}}" className="mediaUpload-close" onTap="removeFile" />
         <view a:if="{{item===''}}" class="mediaUpload-cover-loading">
           <loading color="#2c6ee5" class="mediaUpload-loading"/>
           <view class="mediaUpload-loading-text">
@@ -31,7 +31,7 @@
           <video 
             a:if="{{utils.isVideo(item)}}"
             class="mediaUpload-video" 
-            src="{{'http://172.19.3.40:8093'+item}}"
+            src="{{fileUrl+item}}"
             enableNative="{{true}}"
             objectFit="contain"
           ></video>
@@ -40,15 +40,17 @@
             class="mediaUpload-image" 
             mode="aspectFit"
             data-url="{{item}}"
-            src="{{'http://172.19.3.40:8093'+item}}"
+            src="{{fileUrl+item}}"
             onTap="handlePreview"
           ></image>
         </view>
         
       </view>
-
+      <view a:if="{{ disabled && formData.value.length===0 }}">
+        <icon type="PictureOutline" />暂无图片
+      </view>
       <view 
-        a:if="{{(formData.value.length < (count||1) ||!formData.value)&&!disabled }}" 
+        a:if="{{(fileList.length < (count||1) ||!fileList)&&!disabled }}" 
         class="mediaUpload-add" 
         onTap="mediaUpload"
       >
@@ -63,5 +65,5 @@
       onAction="handleAction"
       onClose="handleCloseBasic"
     ></action-sheet>
-    <text class="mediaUpload-tip">{{tip}}</text> 
+    <text a:if="{{ !disabled }}" class="mediaUpload-tip">{{tip}}</text> 
 </form-item>

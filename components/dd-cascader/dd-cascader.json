@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "form-item": "antd-mini/es/Form/FormItem/index",
+    "cascader-picker": "antd-mini/es/Picker/CascaderPicker/index"
+  }
+}

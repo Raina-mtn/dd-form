@@ -1,0 +1,35 @@
+<form-item
+  className="{{className}}"
+  position="{{position}}"
+  label="{{label}}"
+  labelWidth="{{labelWidth}}"
+  status="{{formData.status}}"
+  errors="{{formData.errors}}"
+  tooltip="{{tooltip}}"
+  required="{{formData.required}}"
+  requiredMark="{{requiredMark}}"
+  validateStatus="{{validateStatus}}"
+  help="{{help}}"
+>
+  <cascader-picker 
+    options="{{list}}"
+    value="{{onlyLast?value:formData.value}}"  
+    className="{{className}}" 
+    cancelText="{{cancelText}}" 
+    okText="{{okText}}" 
+    placeholder="{{placeholder||`请选择${label}`}}" 
+    maskClosable="{{maskClosable}}" 
+    maskStyle="{{maskStyle}}" 
+    popStyle="{{popStyle}}" 
+    style="{{style}}" 
+    disabled="{{disabled}}" 
+    title="{{title}}"
+    maskClassName="{{maskClassName}}" 
+    indicatorStyle="{{indicatorStyle}}" 
+    indicatorClassName="{{indicatorClassName}}"
+    defaultValue="{{defaultValue}}" 
+    onOk="cascaderChange" 
+    onFormat="cascaderFormat"
+  >
+  </cascader-picker>
+</form-item>

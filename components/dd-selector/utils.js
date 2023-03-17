@@ -1,7 +1,7 @@
 const formatOptions = (options,valueKey)=>{
   const newOptions=options&&options.map(i=>{
     return {
-      label:i[valueKey.label],
+      text:i[valueKey.text],
       value:i[valueKey.value],
       ...i
     }

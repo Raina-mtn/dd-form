@@ -7,18 +7,23 @@ Component({
     list:[]
   },
   async didMount() {
+    let list = []
     if(this.props.options){
-      this.setData({list:this.props.options})
+      list = this.props.options
     }else{
-      this.setData({list:await this.props.getList()})
+      list = await this.props.getList()
     }
-    formatOptions(this.data.list,this.props.valueKey||{label:'label',value:'value'})
+    list=formatOptions(list,this.props.valueKey||{label:'label',value:'value'})
+    this.setData({list})
   },
   didUnmount() {},
   methods: {
     pickerChange(value,obj,e){
       this.emit('onChange', value);
-      this.props.onFormChange(this.props.name,value,obj);
+      const optionsObj = this.data.list.find(i=>{
+        return i[this.props.valueKey?this.props.valueKey.value:'value']===value
+      })
+      this.props.onFormChange(this.props.name,value,optionsObj);
     }
   },
 });

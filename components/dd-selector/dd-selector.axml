@@ -1,0 +1,46 @@
+<form-item
+  name="{{name}}" 
+  label="{{label}}" 
+  position="{{position}}" 
+  validateStatus="{{validateStatus}}" 
+  help="{{help}}" 
+  tooltip="{{tooltip}}" 
+  required="{{required}}" 
+  requiredMark="{{requiredMark}}" 
+  labelWidth="{{labelWidth}}" 
+  status="{{formData.status}}"
+  errors="{{formData.errors}}"
+>
+  <view class="dd-selector-bar">
+    <text class="dd-selector-bar-value">
+      {{currentLabel.join()}}
+    </text>
+    <view 
+      a:if="{{ !disabled }}"
+      class="dd-selector-bar-item {{currentOpen? 'dd-selector-bar-item-active' : ''}}"
+      onTap="onTapItem">
+      点击选择
+      <icon 
+        type="DownFill"
+        className="dd-selector-bar-item-icon {{currentOpen ? 'dd-selector-bar-item-icon-up' : ''}}"
+        size="x-small"
+        />
+    </view>
+  </view>
+  <view class="dd-selector-items">
+    <view 
+      class="dd-selector-items-content {{currentOpen? 'dd-selector-items-content-active' : ''}} {{contentClassName || ''}}">
+      <selector 
+        value="{{formData.value}}"
+        options="{{list}}"
+        multiple="{{multiple}}"
+        minSelectedCount="{{minSelectedCount}}"
+        maxSelectedCount="{{maxSelectedCount}}"
+        activeItemClassName="{{activeItemClassName}}"
+        activeItemStyle="{{activeItemStyle}}"
+        onChange="selectChange" 
+      >
+    </view>
+  </view>
+  </selector>
+</form-item>

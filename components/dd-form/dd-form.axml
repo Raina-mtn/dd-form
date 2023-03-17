@@ -2,6 +2,7 @@
   <form-input
   a:if="{{item.el==='input'}}"
   name="{{item.name}}" 
+  type="{{item.type}}"
   label="{{item.label}}" 
   position="{{item.position}}" 
   validateStatus="{{item.validateStatus}}" 
@@ -69,11 +70,14 @@
     requiredMark="{{item.requiredMark}}" 
     labelWidth="{{item.labelWidth}}" 
     defaultValue="{{item.defaultValue}}" 
-    disabled="{{item.disabled}}" 
     maxSelectedCount="{{item.maxSelectedCount}}" 
     minSelectedCount="{{item.minSelectedCount}}" 
     multiple="{{item.multiple}}" 
     style="{{item.style}}" 
+    valueKey="{{item.valueKey}}"
+    getList="{{item.getList}}"
+    disabled="{{item.disabled}}" 
+    onFormChange="formChange"
     ref="handleRef"
     ></form-selector>
 
@@ -116,7 +120,7 @@
     className="{{item.className}}" 
     color="{{item.color}}" 
     defaultChecked="{{item.defaultChecked}}" 
-    disabled="{{true}}" 
+    disabled="{{item.disabled}}" 
     loading="{{item.loading}}" 
     checkedText="{{item.checkedText}}" 
     uncheckedText="{{item.uncheckedText}}" 
@@ -220,9 +224,10 @@
     count="{{item.count}}"
     disabled="{{item.disabled}}"
     help="{{item.help}}"
+    fileUrl="{{item.fileUrl}}"
     tip="{{item.tip}}"
     ref="handleRef"
-  />
+  ></form-media>
     
   <!-- picker选择器 -->
   <form-picker 
@@ -264,9 +269,10 @@
 
 
   <!-- file文件上传 -->
-  <form-file 
+  <!-- <form-file 
     a:elif="{{item.el==='file'}}"
     name="{{item.name}}" 
+    labelWidth="{{item.labelWidth}}" 
     label="{{item.label}}" 
     position="{{item.position}}" 
     validateStatus="{{item.validateStatus}}" 
@@ -279,7 +285,7 @@
     disabled="{{item.disabled}}"
     text="{{item.text}}"
     ref="handleRef"
-  ></form-file>
+  ></form-file> -->
 
   <!-- stepper计数器 -->
   <form-stepper 
@@ -309,8 +315,6 @@
     ref="handleRef"
     ></form-stepper>
 
-
-    
   <!-- rate-->
   <form-rate
     a:elif="{{item.el==='rate'}}"
@@ -320,6 +324,7 @@
     validateStatus="{{item.validateStatus}}" 
     help="{{item.help}}" 
     tooltip="{{item.tooltip}}" 
+    readonly="{{item.disabled}}"
     required="{{item.required}}" 
     message="{{item.message||`请选择${item.label}`}}" 
     requiredMark="{{item.requiredMark}}" 
@@ -337,16 +342,6 @@
     ref="handleRef"
   ></form-rate>
 
-<!-- checklist可勾选列表 -->
-  <!-- <form-checklist 
-    a:elif="{{item.el==='checklist'}}"
-    className="{{item.className}}"
-    defaultValue="{{item.defaultValue}}"
-    multiple="{{item.multiple}}"
-    options="{{item.options}}"
-    ref="handleRef"
-  /> -->
-
   <form-cascader-picker
     a:elif="{{item.el==='cascader'}}"
     name="{{item.name}}" 
@@ -357,28 +352,34 @@
     tooltip="{{item.tooltip}}" 
     required="{{item.required}}" 
     message="{{item.message||`请选择${item.label}`}}" 
-    requiredMark="{{item.requiredMark}}"
+    requiredMark="{{item.requiredMark}}" 
     labelWidth="{{item.labelWidth}}" 
-    options="{{item.options}}"
-    placeholder="{{item.placeholder||`请选择${item.label}`}}"
-    defaultValue="{{item.defaultValue}}"
-    disabled="{{item.disabled}}"
-    cancelText="{{item.cancelText}}"content="{{item.content}}" 
+    className="{{item.className}}" 
+    defaultValue="{{item.defaultValue}}" 
+    disabled="{{item.disabled}}" 
+    cancelText="{{item.cancelText}}" 
+    content="{{item.content}}" 
     indicatorStyle="{{item.indicatorStyle}}" 
     indicatorClassName="{{item.indicatorClassName}}" 
     maskClassName="{{item.maskClassName}}" 
     maskClosable="{{item.maskClosable}}" 
     maskStyle="{{item.maskStyle}}" 
     okText="{{item.okText}}" 
+    options="{{item.options}}" 
+    placeholder="{{item.placeholder||`请选择${item.label}`}}" 
     popClassName="{{item.popClassName}}" 
     popStyle="{{item.popStyle}}" 
     prefix="{{item.prefix}}" 
     style="{{item.style}}" 
     suffix="{{item.suffix}}" 
-    title="{{item.title}}" 
-    onFormat="{{item.onFormat||'cascaderFormat'}}"
+    title="{{item.title}}"
+    valueKey="{{item.valueKey}}"
+    getList="{{item.getList}}"
+    join="{{item.join}}"
+    onFormChange="formChange"
     ref="handleRef"
   ></form-cascader-picker>
+  
   <view 
     a:elif="{{item.el==='text'}}"
     style="{{item.style}}" 
