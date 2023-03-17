@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/risk/risk"
+    "src/demo/risk/risk"
   ],
   "window": {
     "defaultTitle": "设施设备维护"
@@ -11,7 +11,7 @@
     "backgroundColor": "#F5F5F9",
     "items": [
       {
-        "pagePath": "pages/risk/risk",
+        "pagePath": "src/demo/risk/risk",
         "icon": "image/home.png",
         "activeIcon": "image/home_active.png",
         "name": "首页"

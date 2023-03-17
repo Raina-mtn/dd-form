@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "dd-form": "/components/dd-form/dd-form",
+    "dd-form": "../../index/index",
     "button": "antd-mini/es/Button/index",
     "assets-id":"./components/assetsId/assetsId"
   },
