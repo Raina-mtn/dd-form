@@ -4,9 +4,11 @@ Page({
   data: {
     formData:{},
     columns:[{
+      name:'id'
+    },{
       label:'线路',
       name:'line',
-      el:'picker',
+      el:'radio',
       getList:async ()=>(await(getOptionsMock().then(res=>res.data)))
 
     },{
@@ -14,13 +16,6 @@ Page({
       name:'textarea',
       allowClear:true,
       el:'textarea'
-    },{
-      label:'时间区间',
-      name:'startTime,endTime',
-      required:true,
-      allowClear:true,
-      el:'daterange',
-      format:'YYYY-MM-DD'
     },{
       label:'',
       name:'btns',

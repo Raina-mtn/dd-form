@@ -17,14 +17,6 @@ App({
     corpId:'',
     model:''
   },
-  login(data){
-    apiLogin({...data}).then(res=>{
-      dd.setStorageSync({ // 登录成功后设置缓存
-        key: 'Authentication',
-        data: `${res.data.token_type} ${res.data.access_token}`
-      })
-    })
-  },
   showToast(content){
     dd.showToast({
         type: 'none',

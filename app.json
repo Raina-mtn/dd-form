@@ -17,8 +17,5 @@
         "name": "首页"
       }
     ]
-  },
-  "usingComponents": {
-    "tab-bar": "antd-mini/es/TabBar/index"
   }
 }
